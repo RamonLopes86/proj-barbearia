@@ -45,7 +45,26 @@
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: bold;
+    transition: 400ms;
+    border-radius: 8px;
+    padding: 8px;
 }
+
+.boxBanner .boxNav .boxLogin p:hover{
+
+    transition: 400ms;
+    background-color: #FDD25A;
+    color: black;
+
+
+    & .icon{
+
+        color: black;
+        transition: 400ms;
+    }
+
+}
+   
 
 .boxBanner .boxNav .boxLogin p:hover{
 
@@ -82,6 +101,27 @@
     transform: translateY(-3px);
 }
 
+.boxBanner .boxNav nav ul li::after {
+
+   content: '';
+   width: 0%;
+   border-bottom: 2px solid #FDD25A;
+   padding-bottom: 5px;
+   display: block;
+   transition: 400ms;
+}
+
+.boxBanner .boxNav nav ul li:hover::after {
+
+    content: '';
+    width: 100%;
+    border-bottom: 2px solid #FDD25A;
+    padding-bottom: 5px;
+    display: block;
+    transition: 400ms;
+}
+
+
 
 .imgLogo{
 
@@ -94,6 +134,7 @@
     width: 20px;
     height: 20px;
     color:#f5edd9;
+    transition: 400ms;
 }
 
 .i{
@@ -104,6 +145,7 @@
     cursor: pointer;
     transition: 800ms;
     transform: translateX(50vw);   
+   
 }
 
 
@@ -124,14 +166,15 @@
     top: 100%;
     right: 20px;
     transition: 800ms;
-   
 
 }
+   
+
 
 
 .alertOff{
 
-    transform: translateX(50vw);
+    transform: translateX(80vw);
     transition: 800ms;
    
 }
@@ -157,12 +200,190 @@
         text-transform: uppercase;
         font-size: 0.8rem;
         cursor: pointer;
+        border-radius: 5px;
+        transition: 400ms;
    
 }
+
+.boxNav .alertEscondido .alertFilho p:hover{
+
+    
+    background-color: #FDD25A;
+    color: black;
+    font-weight: bold;
+    transition: 400ms;
+
+
+    & .icon{
+        color: black;
+        transition: 400ms;
+    }
+
+}
+
+.boxBanner .boxTexto{
+
+    position: absolute;
+    top: 35%;
+    text-transform: uppercase;
+    padding: 0px 20px;
+
+    & h1{
+
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    & h3{
+
+        color: #977555;
+        
+    }
+
+    & p{
+
+        text-transform: lowercase;
+        max-width: 500px;
+        text-align: left;
+        line-height: 25px;
+        color: #f5edd9;
+        font-size: 0.9rem;
+    }
+}
+
+.boxBanner .boxTexto .boxFilhoTexto{
+
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+}
+
+.boxBanner .boxTexto .boxFilhoTexto .boxBotao{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0px;
+
+  
+}
+
+.boxBanner .boxTexto .boxFilhoTexto .boxBotao  button{
+
+    width: 130px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.boxBanner .boxTexto .boxFilhoTexto .boxBotao  button:nth-of-type(1){
+
+    background-color: #977555;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 10px #977555;
+    transition: 400ms;
+}
+
+.boxBanner .boxTexto .boxFilhoTexto .boxBotao  button:nth-of-type(1):hover{
+
+
+        background-color: transparent;
+        transition: 400ms;
+
+}
+
+
+.boxBanner .boxTexto .boxFilhoTexto .boxBotao  button:nth-of-type(2){
+
+    color: #977555;
+    text-transform: uppercase;
+    background-color: transparent;
+    outline: 1px solid #977555;
+    transition: 400ms;
+ 
+}
+
+.boxBanner .boxTexto .boxFilhoTexto .boxBotao  button:nth-of-type(2):hover{
+
+    
+    background-color: #977555;
+    outline: none;
+    transition: 400ms;
+    color: white;
+
+}
+
+
+.boxBanner .boxTexto .boxFilhoTexto .redes{
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;  
+      padding: 10px 0px;
+
+}
+
+.boxBanner .boxTexto .boxFilhoTexto .redes .boxImg{
+
+   width: 30px;
+   height: 30px;
+   background-color: #977555;
+   border-radius: 50%;
+   padding: 17px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #977555;
+
+}
+
+.boxBanner .boxTexto .boxFilhoTexto .redes .boxImg .icon {
+
+    filter: drop-shadow(0px 0px 5px white);
+
+ }
+ 
+
+ @media screen and (max-width:500px) {
+
+    .boxBanner{
+
+        background-image: url(../../../public/bg-image500px.png);
+
+    }
+
+    .boxBanner .boxTexto{
+
+        top: 42%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+
+    .boxBanner{
+
+        background-image: url(../../../public/bg-image1200px.png);
+
+    }
+
+}
+
+
+
 
 
 @media screen and (max-width:960px) {
 
+
+  
 
     .i{
 

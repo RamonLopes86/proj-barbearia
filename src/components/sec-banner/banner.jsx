@@ -2,12 +2,16 @@
 
 import estiloBanner from './banner.module.css';
 import Image from 'next/image';
-import logo from '../../../public/penteado.png'
+import logo from '../../../public/penteado.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faGear} from '@fortawesome/free-solid-svg-icons'
-import {faUser} from '@fortawesome/free-solid-svg-icons'
-import {faBars} from '@fortawesome/free-solid-svg-icons'
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import {faGear} from '@fortawesome/free-solid-svg-icons';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {faXmark} from '@fortawesome/free-solid-svg-icons';
+import wpp from '../../../public/wpp.png';
+import face from '../../../public/facebook.png';
+import insta from '../../../public/instagram.png';
+
 import react , {useState , useRef , useEffect} from 'react';
 
 
@@ -37,12 +41,16 @@ export default function Banner(){
     }
 
 
+   
+
+
     useEffect(()=>{
 
         window.addEventListener('resize' , resize)
 
+        
 
-        return ()=> window.removeEventListener('resize' , resize)
+        return ()=> window.removeEventListener('resize' , resize) 
 
     },[])
 
@@ -54,7 +62,7 @@ export default function Banner(){
 
             <div className={estiloBanner.boxNav}>
 
-                  <Image className={estiloBanner.imgLogo} src={logo}/>  
+                  <Image alt='imagens' className={estiloBanner.imgLogo} src={logo}/>  
 
                   <nav>
 
@@ -93,6 +101,40 @@ export default function Banner(){
                  
 
             </div>
+
+
+            <div className={estiloBanner.boxTexto}>
+
+                <div className={estiloBanner.boxFilhoTexto}>
+
+                    <h1>blade's palace barbershop</h1>
+                    <h3>corte de cabelo e barba & serviços especiais</h3>
+                    <p>Bem vindo ao Blade's barbershop , o seu destino definitivo para um estilo impecável e cuidados excepcionais.Aqui combinamos a tradição da barbearia com um toque moderno para oferecer uma experiência de gooming inigualável.Oferecemos Corte de cabelo, Barba & Serviços Especiais</p>
+
+                    <div className={estiloBanner.boxBotao}>
+
+                        <button>Serviços</button>
+                        <button>Agendamento</button>
+                    </div>
+
+                    <div className={estiloBanner.redes}>
+
+                        <div className={estiloBanner.boxImg}>
+                             <Image alt='images' className={estiloBanner.icon} src={wpp}/>
+                        </div>
+
+                       <div className={estiloBanner.boxImg}>
+                            <Image alt='imagens' className={estiloBanner.icon} src={face}/>
+                       </div>
+
+                      <div className={estiloBanner.boxImg}>
+                            <Image alt='imagens' className={estiloBanner.icon} src={insta}/>
+                      </div>
+
+                    </div>
+                    
+                                </div>
+                </div>
           
 
         </section>
