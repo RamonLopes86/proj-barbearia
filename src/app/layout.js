@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 
-const moch = localFont({
+export const moch = localFont({
 
   src:"./fonts/Mochary.ttf",
   variable:'--fontMon',

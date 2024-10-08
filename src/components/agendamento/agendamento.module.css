@@ -1,0 +1,394 @@
+.boxPai i{
+
+    color: #E6BE53;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    position: relative;
+    top: 1px;
+}
+
+.boxMaior{
+
+    background-color:#021B2F ;
+    min-height: 800px;
+    
+   & h1{
+
+        text-align: center;
+        font-size: 2rem;
+        color: #E6BE53;
+        text-transform: uppercase;
+        padding: 20px 10px 40px 10px;
+    }
+}
+
+.boxPai{
+
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+
+}
+
+ 
+.boxPai .boxAgendamento{
+
+    background-color:#0D3E68 ;
+    border-radius: 10px;
+    padding: 0px 20px;
+}
+
+.boxAgendamento h3:nth-child(1){
+
+    border-bottom: 1px solid white;
+    color:#E6BE53;
+    text-align: center;
+    padding: 10px;
+    width: 95%;
+    margin: 0px auto;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    
+
+}
+
+.boxAgendamento .boxBlocos{
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    
+}
+  
+
+.boxAgendamento .boxBlocos .boxEsquerda{
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 25px 0px;
+    width: 50%;
+   
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxFormulario{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxFormulario .boxNome{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxFormulario .boxMail{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.boxAgendamento .boxBlocos .boxEsquerda .boxFormulario .boxTel{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxFormulario  input{
+
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxFormulario label{
+
+    color: white;
+    font-size: 0.7rem;
+    padding-bottom: 2px;
+}
+
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxRadio{
+
+    color: white;
+
+
+    & p{
+
+        font-size:0.8rem;
+    }
+
+    & label{
+
+        font-size: 0.9rem;
+        padding: 5px 0px;
+    }
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxRadio .boxRadioAlter{
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxRadio .boxSim{
+
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxRadio .boxNao{
+
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    
+  }
+
+
+  .boxAgendamento .boxBlocos .boxEsquerda .boxData p {
+
+      font-size: 0.8rem;
+      color: #E6BE53;
+     
+}
+
+
+
+
+
+  .boxAgendamento .boxBlocos .boxEsquerda .boxData .boxDataFilho{
+
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        
+  }
+
+  .boxAgendamento .boxBlocos .boxEsquerda .boxData .boxDataFilho div{
+
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-bottom: 3px;
+    
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxData .boxDataFilho div input{
+
+
+    border-radius: 8px;
+    border: none;
+    padding: 2px 0px;
+    
+    
+}
+
+.boxAgendamento .boxBlocos .boxEsquerda .boxData .boxDataFilho div label{
+
+
+    color: white;
+    
+}
+
+
+.boxAgendamento .boxBlocos .boxDireita{
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.boxAgendamento .boxBlocos .boxDireita .btnServicos{
+
+    background-color:#021b2fcc;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 0px;
+    width: 170px;
+    margin: 0px auto;
+    font-size: 0.7rem;
+    font-weight: lighter;
+
+
+}
+
+
+
+.boxAgendamento .boxBlocos .boxDireita .pTeste{
+
+    position: absolute;
+    top: 22px;
+    font-size: 0.8rem;
+    color: white;
+    
+
+}
+
+
+
+
+.boxAgendamento .boxBlocos .boxDireita .boxServicos{
+
+        background-color: #021B2F;
+        border-radius: 8px;
+        margin-top: 30px;
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxServicos .servicos{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxServicos .servicos button{
+
+    background-color: #E6BE53;
+    color:black;
+    border: none;
+    width: 60px;
+    border-radius: 20px;
+    padding: 5px;
+
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxServicos .servicos .boxCorte{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+
+    & h3{
+
+        border-bottom: none;
+        padding:0px 5px;
+        text-align: left;
+        font-size: 0.8rem;
+        text-transform: lowercase;
+        
+    }
+
+    & p{
+
+        font-size: 0.7rem;
+        padding: 0px 9px;
+        color: white;
+
+    }
+
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxServicos .servicos .iconLixo{
+
+    color: #E6BE53;
+    opacity: 0.6;
+
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxServicos .servicos .boxCorte .circulo{
+
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+
+   
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxServicos .servicos .boxCorte .circulo::after{
+
+    content:'50x50';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 0.7rem;
+    color: gray;
+    opacity: 0.8;
+
+   
+}
+
+
+.boxAgendamento .boxBlocos .boxDireita .boxBtn{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxBtn button{
+
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+  
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxBtn button:nth-of-type(1){
+
+        background-color: #E6BE53;
+        color: #021B2F;
+        font-weight: bold;
+
+}
+
+.boxAgendamento .boxBlocos .boxDireita .boxBtn button:nth-of-type(2){
+
+    
+    background-color: transparent;
+    border:2px solid #E6BE53;
+    color: #E6BE53;
+}
+
+
+
+  
+
+
+
+.boxMaior .Arrow .imgSeta{
+
+    width: 80px;
+    height: 80px;
+}
+
+
+
+
+  
+  
+    

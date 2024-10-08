@@ -1,0 +1,411 @@
+.boxPai {
+    text-align: center;
+    padding-bottom: 40px;
+    font-size: 1.5rem;
+    color: #E6BE53;
+    background-color: #021B2F;
+
+}
+
+.boxPai>h1 {
+
+    padding: 40px 0px;
+    text-transform: uppercase;
+    
+}
+
+
+
+
+
+
+.boxPai .conteudo {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+
+}
+
+
+
+
+.boxPai .conteudo .cont1 .moldura {
+
+    background-color: #0D3E68;
+    width: 500px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+
+
+    & .img {
+
+        width: 100px;
+        height: 90px;
+        clip-path: circle();
+    }
+
+}
+
+
+.boxPai .conteudo .cont1 .moldura .boxTx {
+
+    width: 60%;
+
+}
+
+
+.boxPai .conteudo .cont1 .moldura p {
+
+    text-align: justify;
+    width: 100%;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: lighter;
+    opacity: 0.6;
+}
+
+
+.boxPai .conteudo .cont1 .moldura .boxBtn {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boxPai .conteudo .cont1 .moldura .boxBtn button {
+
+    width: 100px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.boxPai .conteudo .cont1 .moldura .boxBtn button:nth-of-type(1) {
+
+    background-color: #E6BE53;
+    box-shadow: 0px 0px 10px #E6BE53;
+
+}
+
+.boxPai .conteudo .cont1 .moldura .boxBtn button:nth-of-type(2) {
+
+    background-color: transparent;
+    outline: 1px solid #E6BE53;
+    color: #E6BE53;
+}
+
+
+
+.boxPai .conteudo .cont1 .moldura h1 {
+
+    color: #E6BE53;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 0px;
+
+}
+
+
+
+
+.boxPai .conteudo .cont1 {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+
+
+.boxPai .conteudo .contMeio {
+
+
+    width: 280px;
+    background-color: #E6BE53;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0px 0px 15px #E6BE53;
+    border-radius: 10px;
+    gap: 5px;
+
+    & p {
+        text-align: justify;
+        font-size: 0.9rem;
+        padding: 10px 10px;
+        color: black;
+        opacity: 0.8;
+
+    }
+
+    & h2 {
+
+        font-family: var(--fontMon);
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        padding: 10px;
+        color: #0D3E68;
+    }
+
+
+
+    & .imgLogo {
+
+        width: 100px;
+        height: fit-content;
+    }
+
+}
+
+.boxPai .conteudo .contMeio .boxBtnMeio {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+
+}
+
+.boxPai .conteudo .contMeio .boxBtnMeio span {
+
+    font-size: 0.7rem;
+    display: inline-block;
+    color: #021B2F;
+
+}
+
+
+.boxPai .conteudo .contMeio .boxBtnMeio .btnTx {
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.boxPai .conteudo .contMeio .boxBtnMeio button {
+
+    width: 200px;
+    padding: 8px;
+    border: none;
+    background-color: #0D3E68;
+    color: white;
+    border-radius: 20px;
+
+}
+
+
+.boxEscondido .moldura {
+
+
+    background-color: #0D3E68;
+    width: 500px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+
+
+    & .img {
+
+        width: 100px;
+        height: 90px;
+        clip-path: circle();
+    }
+
+}
+
+
+
+.boxEscondido {
+
+    display: none;
+}
+
+.boxEscondido .moldura p {
+
+    text-align: justify;
+    width: 100%;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: lighter;
+    opacity: 0.6;
+}
+
+
+
+
+.boxEscondido .moldura .boxBtn button {
+
+    width: 100px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.boxEscondido .moldura .boxBtn button:nth-of-type(1) {
+
+    background-color: #E6BE53;
+    box-shadow: 0px 0px 10px #E6BE53;
+
+}
+
+.boxEscondido .moldura .boxBtn button:nth-of-type(2) {
+
+    background-color: transparent;
+    outline: 1px solid #E6BE53;
+    color: #E6BE53;
+}
+
+
+
+.boxEscondido .moldura h1 {
+
+    color: #E6BE53;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 0px;
+
+}
+
+
+
+
+@media screen and (max-width:1420px) {
+
+    .boxPai .conteudo {
+
+        max-width: 700px;
+        margin: 0px auto;
+    }
+
+    .boxPai .conteudo .contMeio {
+
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+    }
+
+
+    .boxPai .conteudo .contMeio p {
+
+        max-width: 500px;
+        margin: 0px auto;
+        text-align: justify;
+        line-height: 25px;
+
+    }
+
+    .boxPai .conteudo .contMeio .boxBtnMeio {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+
+
+    .boxPai .conteudo .contMeio .boxBtnMeio .btnSaibaMais {
+
+        position: relative;
+        top: 7px;
+       
+    }
+        
+
+
+
+
+
+
+    .boxPai .conteudo {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .boxPai .conteudo .cont1 {
+
+        display: none;
+
+    }
+
+
+
+    .boxEscondido {
+
+        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+    }
+
+
+    .boxEscondido .moldura {
+
+        width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .boxEscondido .moldura .boxBtn {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+
+    }
+
+    .boxEscondido .moldura .boxBtn button {
+
+
+        width: 100%;
+
+    }
+
+    .boxEscondido .moldura p {
+
+        max-width: 500px;
+        margin: 0px auto;
+
+    }
+
+}
