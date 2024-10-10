@@ -8,6 +8,7 @@ import seta from '../../../public/setaEsquerda.png'
 
 
 
+
 export default function Agendamento() {
 
     return (
@@ -149,15 +150,112 @@ export default function Agendamento() {
 
                 </div>
 
-                    <div className={estiloAgend.Arrow}>
+                    {/* <div className={estiloAgend.Arrow}>
 
                                 <Image className={estiloAgend.imgSeta} src={seta}/>
 
-                    </div>
+                    </div> */}
 
 
                 <div className={estiloAgend.boxInfo}>
-                    info
+
+                    <div className={estiloAgend.boxInfoFilho}>
+
+                        <h1>Confira suas informações</h1>
+
+                        <div className={estiloAgend.infoServEscolhido}>
+
+                            <h3>serviços escolhidos:</h3>
+
+                            <div className={estiloAgend.boxMaiorServEscolhido}>
+
+                                <div className={estiloAgend.boxFilhoServEscolhido}>
+
+                                    <div className={estiloAgend.boxInfoCirculo}>
+                                    </div>
+
+                                    <div className={estiloAgend.boxInfoTx}>
+                                        <h3>corte de cabelo</h3>
+                                        <p>preço fora da assinatura</p>
+                                    </div>
+
+                                    <button>R$ 30</button>
+                                    
+                                </div>
+                                <div className={estiloAgend.boxFilhoServEscolhido}>
+                                    <div className={estiloAgend.boxInfoCirculo}>
+                                    </div>
+                                    <div className={estiloAgend.boxInfoTx}>
+                                        <h3>corte de cabelo</h3>
+                                        <p>preço fora da assinatura</p>
+                                    </div>
+                                    <button>R$ 30</button>
+                                </div>
+                                <div className={estiloAgend.boxFilhoServEscolhido}>
+                                    <div className={estiloAgend.boxInfoCirculo}>
+                                    </div>
+                                    <div className={estiloAgend.boxInfoTx}>
+                                        <h3>corte de cabelo</h3>
+                                        <p>preço fora da assinatura</p>
+                                    </div>
+                                    <button>R$ 30</button>
+                                </div>
+                                <div className={estiloAgend.boxFilhoServEscolhido}>
+                                    <div className={estiloAgend.boxInfoCirculo}>
+                                    </div>
+                                    <div className={estiloAgend.boxInfoTx}>
+                                        <h3>corte de cabelo</h3>
+                                        <p>preço fora da assinatura</p>
+                                    </div>
+                                    <button>R$ 30</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <section className={estiloAgend.boxInformacoes}>
+
+                            <div className={estiloAgend.boxinfoSuasInfo}>
+
+                                <h3>suas informações</h3>
+
+                                <div className={estiloAgend.boxInfoTx}>
+
+                                    <div className={estiloAgend.boxInfoNomes}>
+
+                                            <p>Nome:</p>
+                                            <p>E-mail</p>
+                                            <p>Telefone</p>
+
+                                    </div>
+
+                                    <div className={estiloAgend.boxinfoData}>
+
+                                              <p>É assinante</p>
+                                              <p>Data</p>
+                                              <p>Hora</p>  
+                                    </div>
+                        
+
+
+                                </div>
+
+                            </div>
+
+                    </section>
+
+
+                    <span>Total : R$ 90</span>
+
+
+
+                    <button>Agendar</button>
+
+
+
                 </div>
             </section>
     </section>
