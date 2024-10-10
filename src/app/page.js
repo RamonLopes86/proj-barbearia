@@ -4,6 +4,7 @@ import Topo from "@/components/topo/topo";
 import Banner from "@/components/sec-banner/banner";
 import Ps from "@/components/precosServicos/ps";
 import Agendamento from "@/components/agendamento/agendamento";
+import Time from "@/components/sectionTime/time";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
             <Banner/>
             <Ps/>
             <Agendamento/>
+            <Time/>
      
 
         </main>

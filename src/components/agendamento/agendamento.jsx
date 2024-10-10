@@ -1,6 +1,6 @@
 import estiloAgend from './agendamento.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan , faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import seta from '../../../public/setaEsquerda.png'
 
@@ -12,13 +12,13 @@ import seta from '../../../public/setaEsquerda.png'
 export default function Agendamento() {
 
     return (
-    
+
         <section className={estiloAgend.boxMaior}>
-            
+
             <h1>Agendamento</h1>
 
             <section className={estiloAgend.boxPai}>
-               
+
                 <div className={estiloAgend.boxAgendamento}>
 
                     <h3>Faça seu Agendamento Aqui</h3>
@@ -31,7 +31,7 @@ export default function Agendamento() {
 
                                 <div className={estiloAgend.boxNome}>
                                     <label htmlFor="idnome">Nome Completo:</label>
-                                    <input  placeholder='Seu nome' type="text" name="nome" id="idnome" autoComplete='off' />
+                                    <input placeholder='Seu nome' type="text" name="nome" id="idnome" autoComplete='off' />
                                 </div>
                                 <div className={estiloAgend.boxMail}>
                                     <label htmlFor="idmail">E-mail:</label>
@@ -63,17 +63,17 @@ export default function Agendamento() {
                             <div className={estiloAgend.boxData}>
 
                                 <div className={estiloAgend.boxDataFilho}>
-                                        <div>
-                                            <label htmlFor="iddata">Data</label>
-                                            <input type="date" name="data" id="iddata" />
-                                        </div>
+                                    <div>
+                                        <label htmlFor="iddata">Data</label>
+                                        <input  type="date" name="data" id="iddata" />
+                                    </div>
 
-                                        <div>
-                                            <label htmlFor="idtime">Hora</label>
-                                            <input type="time" name="time" id="idtime" />
-                                        </div>
+                                    <div>
+                                        <label htmlFor="idtime">Hora</label>
+                                        <input type="time" name="time" id="idtime" />
+                                    </div>
 
-                                        
+
 
                                 </div>
                                 <p>(ter a sex:09:00h as 19:30 | sáb: 08:00h as 18:30h)</p>
@@ -88,12 +88,12 @@ export default function Agendamento() {
                             <p className={estiloAgend.pTeste}>Serviços escolhidos</p>
 
                             <div className={estiloAgend.boxServicos}>
-                                
+
                                 <div className={estiloAgend.servicos}>
                                     <FontAwesomeIcon className={estiloAgend.iconLixo} icon={faTrashCan} />
                                     <div className={estiloAgend.boxCorte}>
                                         <div className={estiloAgend.circulo}>
-                                                {/* div para border-radius */}
+                                            {/* div para border-radius */}
                                         </div>
                                         <div className={estiloAgend.boxTxt}>
                                             <h3>Corte de cabelo</h3>
@@ -107,7 +107,7 @@ export default function Agendamento() {
                                     <FontAwesomeIcon className={estiloAgend.iconLixo} icon={faTrashCan} />
                                     <div className={estiloAgend.boxCorte}>
                                         <div className={estiloAgend.circulo}>
-                                                {/* div para border-radius */}
+                                            {/* div para border-radius */}
                                         </div>
                                         <div className={estiloAgend.boxTxt}>
                                             <h3>Corte de cabelo</h3>
@@ -121,7 +121,7 @@ export default function Agendamento() {
                                     <FontAwesomeIcon className={estiloAgend.iconLixo} icon={faTrashCan} />
                                     <div className={estiloAgend.boxCorte}>
                                         <div className={estiloAgend.circulo}>
-                                                {/* div para border-radius */}
+                                            {/* div para border-radius */}
                                         </div>
                                         <div className={estiloAgend.boxTxt}>
                                             <h3>Corte de cabelo</h3>
@@ -132,29 +132,30 @@ export default function Agendamento() {
                                 </div>
                             </div>
 
-                                <button className={estiloAgend.btnServicos}>Adicionar mais Serviços  <i>+</i> </button>
+                            <button className={estiloAgend.btnServicos}>Adicionar mais Serviços  <i>+</i> </button>
 
-                                <div className={estiloAgend.boxBtn}>
+                            <div className={estiloAgend.boxBtn}>
 
-                                    <button>Concluido</button>
-                                    <button>Cancelar</button>
-                                    
-                                </div>
+                                <button>Concluido</button>
+                                <button>Cancelar</button>
+
+                            </div>
 
                         </section>
 
 
 
-                       
+
                     </section>
 
                 </div>
 
-                    {/* <div className={estiloAgend.Arrow}>
+                
+                <div className={estiloAgend.Arrow}>
 
-                                <Image className={estiloAgend.imgSeta} src={seta}/>
+                                <Image alt='image' className={estiloAgend.imgSeta} src={seta}/>
 
-                    </div> */}
+                    </div>
 
 
                 <div className={estiloAgend.boxInfo}>
@@ -171,41 +172,53 @@ export default function Agendamento() {
 
                                 <div className={estiloAgend.boxFilhoServEscolhido}>
 
-                                    <div className={estiloAgend.boxInfoCirculo}>
+                                    <div className={estiloAgend.boxCircleText}>
+                                        <div className={estiloAgend.boxInfoCirculo}>
+                                        </div>
+                                        <div className={estiloAgend.boxInfoTx}>
+                                            <h3>corte de cabelo</h3>
+                                            <p>preço fora da assinatura</p>
+                                        </div>
                                     </div>
 
-                                    <div className={estiloAgend.boxInfoTx}>
-                                        <h3>corte de cabelo</h3>
-                                        <p>preço fora da assinatura</p>
+                                    <button>R$ 30</button>
+
+                                </div>
+                                <div className={estiloAgend.boxFilhoServEscolhido}>
+
+                                    <div className={estiloAgend.boxCircleText}>
+
+                                        <div className={estiloAgend.boxInfoCirculo}>
+                                        </div>
+                                        <div className={estiloAgend.boxInfoTx}>
+                                            <h3>corte de cabelo</h3>
+                                            <p>preço fora da assinatura</p>
+                                        </div>
+                                    </div>
+                                    <button>R$ 30</button>
+                                </div>
+                                <div className={estiloAgend.boxFilhoServEscolhido}>
+
+                                    <div className={estiloAgend.boxCircleText}>
+                                        <div className={estiloAgend.boxInfoCirculo}>
+                                        </div>
+                                        <div className={estiloAgend.boxInfoTx}>
+                                            <h3>corte de cabelo</h3>
+                                            <p>preço fora da assinatura</p>
+                                        </div>
                                     </div>
 
                                     <button>R$ 30</button>
-                                    
                                 </div>
                                 <div className={estiloAgend.boxFilhoServEscolhido}>
-                                    <div className={estiloAgend.boxInfoCirculo}>
-                                    </div>
-                                    <div className={estiloAgend.boxInfoTx}>
-                                        <h3>corte de cabelo</h3>
-                                        <p>preço fora da assinatura</p>
-                                    </div>
-                                    <button>R$ 30</button>
-                                </div>
-                                <div className={estiloAgend.boxFilhoServEscolhido}>
-                                    <div className={estiloAgend.boxInfoCirculo}>
-                                    </div>
-                                    <div className={estiloAgend.boxInfoTx}>
-                                        <h3>corte de cabelo</h3>
-                                        <p>preço fora da assinatura</p>
-                                    </div>
-                                    <button>R$ 30</button>
-                                </div>
-                                <div className={estiloAgend.boxFilhoServEscolhido}>
-                                    <div className={estiloAgend.boxInfoCirculo}>
-                                    </div>
-                                    <div className={estiloAgend.boxInfoTx}>
-                                        <h3>corte de cabelo</h3>
-                                        <p>preço fora da assinatura</p>
+
+                                    <div className={estiloAgend.boxCircleText}>
+                                        <div className={estiloAgend.boxInfoCirculo}>
+                                        </div>
+                                        <div className={estiloAgend.boxInfoTx}>
+                                            <h3>corte de cabelo</h3>
+                                            <p>preço fora da assinatura</p>
+                                        </div>
                                     </div>
                                     <button>R$ 30</button>
                                 </div>
@@ -218,46 +231,51 @@ export default function Agendamento() {
 
                     <section className={estiloAgend.boxInformacoes}>
 
-                            <div className={estiloAgend.boxinfoSuasInfo}>
+                        <div className={estiloAgend.boxinfoSuasInfo}>
 
-                                <h3>suas informações</h3>
-
-                                <div className={estiloAgend.boxInfoTx}>
-
-                                    <div className={estiloAgend.boxInfoNomes}>
-
-                                            <p>Nome:</p>
-                                            <p>E-mail</p>
-                                            <p>Telefone</p>
-
-                                    </div>
-
-                                    <div className={estiloAgend.boxinfoData}>
-
-                                              <p>É assinante</p>
-                                              <p>Data</p>
-                                              <p>Hora</p>  
-                                    </div>
-                        
+                            <h3>Suas informações</h3>
 
 
+
+                            <div className={estiloAgend.boxInfoTx}>
+
+                                <div className={estiloAgend.boxInfoNomes}>
+                                    <p>Nome :</p>
+                                    <p>E-mail :</p>
+                                    <p>Telefone :</p>
                                 </div>
 
+
+                                <div className={estiloAgend.boxinfoData}>
+                                    <p>É assinante :</p>
+                                    <p>Data :</p>
+                                    <p>Hora :</p>
+                                </div>
+
+
                             </div>
+
+
+
+                        </div>
 
                     </section>
 
 
-                    <span>Total : R$ 90</span>
+                    <span>Total : <mark>R$ 90</mark></span>
 
 
 
-                    <button>Agendar</button>
+                    <div className={estiloAgend.boxInfoButton}>
+                        
+                        <button>Agendar</button>
+                    
+                    </div>
 
 
 
                 </div>
             </section>
-    </section>
+        </section>
     )
 }
