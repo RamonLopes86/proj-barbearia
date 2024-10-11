@@ -5,6 +5,7 @@ import Banner from "@/components/sec-banner/banner";
 import Ps from "@/components/precosServicos/ps";
 import Agendamento from "@/components/agendamento/agendamento";
 import Time from "@/components/sectionTime/time";
+import Rodape from "@/components/footer/footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
             <Ps/>
             <Agendamento/>
             <Time/>
+            <Rodape/>
      
 
         </main>

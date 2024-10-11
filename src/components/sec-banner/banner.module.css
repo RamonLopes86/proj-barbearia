@@ -19,6 +19,7 @@
     justify-content: space-between;
     padding: 10px 20px;
     position: relative;
+    
    
 }
 
@@ -175,13 +176,13 @@
 .alertOff{
 
     transform: translateX(80vw);
-    transition: 800ms;
+    transition: 450ms;
    
 }
 
 .alertOn{
 
-    transition: 800ms;
+    transition: 450ms;
     transform: translateX(0);
 }
    
@@ -350,6 +351,21 @@
     filter: drop-shadow(0px 0px 5px white);
 
  }
+
+
+ .boxBanner .navScroll{
+
+    position:fixed;
+    top: 0;
+    left:0;
+    backdrop-filter:blur(10px);
+    width: 100%;
+    border-bottom: 1px solid #f5edd9;
+    border-radius: 0px 0px 8px 8px; 
+    z-index:1;
+    
+}
+   
  
 
  @media screen and (max-width:500px) {
@@ -383,8 +399,6 @@
 @media screen and (max-width:960px) {
 
 
-  
-
     .i{
 
         transform: translateX(0);
@@ -394,6 +408,7 @@
 
         justify-content: flex-start;
         gap: 20px;
+
         
     }
 
@@ -402,5 +417,15 @@
         display: none;
     }
 
+}
+
+
+
+@media screen and (max-width:700px) {
+
+        .boxBanner .boxNav nav{
+
+            display: none;
+        }
 }
 

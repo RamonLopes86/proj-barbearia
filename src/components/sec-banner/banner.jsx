@@ -6,7 +6,7 @@ import logo from '../../../public/penteado.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faGear} from '@fortawesome/free-solid-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {faPowerOff} from '@fortawesome/free-solid-svg-icons';
 import {faXmark} from '@fortawesome/free-solid-svg-icons';
 import wpp from '../../../public/wpp.png';
 import face from '../../../public/facebook.png';
@@ -19,13 +19,18 @@ export default function Banner(){
 
     const [alert , setAlert] = useState(estiloBanner.alertOff)
 
-    const [ham , setHam] = useState(faBars)
+    const [ham , setHam] = useState(faPowerOff)
+
+    const [navScroll , setNavScroll] = useState()
+  
+
+    const boxNav = useRef()
    
 
     function clickMenuEscondido(){
 
       setAlert(alert === estiloBanner.alertOff ? estiloBanner.alertOn  : estiloBanner.alertOff)
-      setHam(ham == faBars ? faXmark : faBars)
+      setHam(ham == faPowerOff ? faXmark : faPowerOff)
 
     }
 
@@ -35,14 +40,38 @@ export default function Banner(){
         if(window.innerWidth > 960){
 
             setAlert(estiloBanner.alertOff)
-            setHam(faBars)
+            setHam(faPowerOff)
         }
 
     }
 
 
+    function ScrollNav(){
+
+
+        if(window.scrollY > 0){
+
+            boxNav.current.classList.add(estiloBanner.navScroll)
+
+
+            
+        }else{
+
+            boxNav.current.classList.remove(estiloBanner.navScroll)
+        }
+
+    }
    
 
+   
+    useEffect(()=>{
+
+        window.addEventListener('scroll' , ScrollNav)
+
+
+        return () => window.removeEventListener('scroll' , ScrollNav)
+
+    },[])
 
     useEffect(()=>{
 
@@ -60,7 +89,7 @@ export default function Banner(){
 
         <section className={estiloBanner.boxBanner}>
 
-            <div className={estiloBanner.boxNav}>
+            <div ref={boxNav} className={`${estiloBanner.boxNav} ${navScroll}`}>
 
                   <Image alt='imagens' className={estiloBanner.imgLogo} src={logo}/>  
 
