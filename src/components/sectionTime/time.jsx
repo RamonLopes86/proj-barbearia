@@ -46,13 +46,13 @@ export default function Time() {
 
     return (
 
-        <section className={estiloTime.boxMaior}>
+        <section id='idtime'  className={estiloTime.boxMaior}>
 
             <h1>Time</h1>
 
             
 
-                <section className={estiloTime.boxMolduras}>
+                <section  className={estiloTime.boxMolduras}>
 
 
                     <section className={estiloTime.boxOverflow}>
@@ -125,7 +125,7 @@ export default function Time() {
                         </div>
 
 
-                        <div className={estiloTime.boxPrevNext}>
+                        <div  className={estiloTime.boxPrevNext}>
                                 <span onClick={prevSlide}>
                                     <FontAwesomeIcon className={estiloTime.iconRight} icon={faChevronRight} />
                                 </span>

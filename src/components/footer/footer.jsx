@@ -10,7 +10,7 @@ export default function Rodape() {
 
     return (
 
-        <section className={estiloFooter.boxPai}>
+        <section id='idcontato' className={estiloFooter.boxPai}>
 
             <section className={estiloFooter.boxRedes}>
 

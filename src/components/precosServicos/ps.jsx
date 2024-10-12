@@ -14,7 +14,7 @@ export default function Ps() {
 
     return (
 
-        <section className={estiloPs.boxPai}>
+        <section id='idpreco' className={estiloPs.boxPai}>
 
             <h1>Preços e Serviços</h1>
 

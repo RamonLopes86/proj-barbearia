@@ -13,7 +13,7 @@ export default function Agendamento() {
 
     return (
 
-        <section className={estiloAgend.boxMaior}>
+        <section id='idagendamento' className={estiloAgend.boxMaior}>
 
             <h1>Agendamento</h1>
 
@@ -69,8 +69,8 @@ export default function Agendamento() {
                                     </div>
 
                                     <div>
-                                        <label htmlFor="idtime">Hora</label>
-                                        <input type="time" name="time" id="idtime" />
+                                        <label htmlFor="idtimes">Hora</label>
+                                        <input type="time" name="time" id="idtimes" />
                                     </div>
 
 
