@@ -248,6 +248,7 @@
     top: 35%;
     text-transform: uppercase;
     padding: 0px 20px;
+    left:100px;
 
     & h1{
 
@@ -264,11 +265,12 @@
     & p{
 
         text-transform: lowercase;
-        max-width: 500px;
+        max-width: 550px;
         text-align: left;
-        line-height: 25px;
+        line-height: 28px;
         color: #f5edd9;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
+        
     }
 }
 
@@ -416,11 +418,11 @@
     position: absolute;
     background-color: #021B2F;
     top:80px;
-    
     padding: 15px;
     width: 200px;
     z-index: 1;
     border-radius: 10px;
+    
  
 
 }
@@ -438,6 +440,7 @@
 
     cursor: pointer;
     width: fit-content;
+    text-transform: uppercase;
   
 }
     
@@ -502,6 +505,14 @@
 }
 
 
+
+@media screen and (max-width:1000px) {
+
+    .boxBanner .boxTexto{
+
+        left: 5px;
+    }
+}
 
 
 

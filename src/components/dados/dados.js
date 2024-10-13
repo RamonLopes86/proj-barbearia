@@ -54,7 +54,7 @@ btn:'ver opções'
             {
 
                 img:sombracelha,
-                tit: 'Sombacelha',
+                tit: 'Sobrancelha',
                 des:'Fazemos sombracelhas por apenas 10 reais.Proporcionamos um acabamento impecável e personalziado.Aproveite essa oportunidade para cuidar de seu visual de maneira acessível. ',
                 preco:10,
                 btn:'ver opções'

@@ -238,7 +238,20 @@
    
 }
     
-    
+
+
+.boxMaior .boxMolduras .boxOverflow .colorOn{
+
+    opacity: 1;
+}
+
+
+.boxMaior .boxMolduras .boxOverflow .colorOff{
+
+    opacity: 0.6;
+}
+
+
     
 
 
@@ -257,6 +270,13 @@
     .boxMolduras .boxOverflow .boxPrevNext  span .iconLeft{
 
         display: block;
+        transition: 400ms;
+    }
+
+    .boxMolduras .boxOverflow .boxPrevNext  span .iconLeft:hover{
+
+        transform: scale(1.1);
+        transition: 400ms;
     }
 
     
@@ -264,7 +284,14 @@
     .boxMolduras .boxOverflow .boxPrevNext  span .iconRight{
 
         display: block;
+        transition: 400ms;
 
+    }
+
+    .boxMolduras .boxOverflow .boxPrevNext  span .iconRight:hover{
+
+        transform: scale(1.1);
+        transition: 400ms;
     }
 
 }

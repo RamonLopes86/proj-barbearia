@@ -69,6 +69,7 @@ export default function Banner() {
         if (alert === estiloBanner.alertOn) {
 
             setAlert(estiloBanner.alertOn)
+            setHam(faXmark)
         }
 
 
@@ -81,6 +82,7 @@ export default function Banner() {
         if (alert === estiloBanner.alertOn) {
 
             setAlert(estiloBanner.alertOff)
+            setHam(faPowerOff)
         }
 
     }

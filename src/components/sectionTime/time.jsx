@@ -18,7 +18,10 @@ import react , {useState , useRef , useEffect} from 'react';
 export default function Time() {
 
     const boxRef = useRef()
-   
+    const [colorBtnLeft , setColorBtnLeft] = useState (estiloTime.colorOn)
+    const [colorBtnRight , setColorBtnRight] = useState ()
+
+    
 
     function prevSlide(){
 
@@ -29,9 +32,23 @@ export default function Time() {
 
      }
 
+
+     if(boxRef.current.scrollLeft + boxRef.current.offsetWidth >= 560){
+
+        setColorBtnRight(estiloTime.colorOff)
+        
+     }
+
+     if(boxRef.current.scrollLeft <=565){
+
+        setColorBtnLeft(estiloTime.colorOn)
+     }
+     
+     console.log(boxRef.current.scrollLeft + boxRef.current.offsetWidth)
+    
     }
 
-
+   
     function BackSlide(){
 
         if(boxRef.current.scrollWidth >= boxRef.current.scrollLeft){
@@ -40,8 +57,24 @@ export default function Time() {
     
          }
 
-    }
+         if(boxRef.current.scrollLeft + boxRef.current.offsetWidth <= 560){
+
+            setColorBtnRight(estiloTime.colorOn)
+            setColorBtnLeft(estiloTime.colorOff)
+         }
+
+         if(boxRef.current.scrollLeft <= 870){
+
+            setColorBtnRight(estiloTime.colorOn)
+         }
+
         
+
+    }
+      
+    
+   
+
 
 
     return (
@@ -62,15 +95,15 @@ export default function Time() {
                             <div className={estiloTime.moldura}>
                             
                                 <div className={estiloTime.boxCima}>
-                                    <Image className={estiloTime.imgBarbeiro} src={barbeiro} />
+                                    <Image alt='imagem' className={estiloTime.imgBarbeiro} src={barbeiro} />
                                     <div className={estiloTime.boxCimaTx}>
                                         <h2>Ramon 1</h2>
                                         <p>Barbeiro Junior</p>
                                         <p>Local : Rua Franz Volles Nº 1636</p>
                                         <div className={estiloTime.boxRedes}>
-                                            <Image className={estiloTime.imgRedes} src={insta} />
-                                            <Image className={estiloTime.imgRedes} src={face} />
-                                            <Image className={estiloTime.imgRedes} src={whats} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={insta} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={face} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={whats} />
                                         </div>
                                     </div>
                                 </div>
@@ -82,15 +115,15 @@ export default function Time() {
                             </div>
                             <div className={estiloTime.moldura}>
                                 <div className={estiloTime.boxCima}>
-                                    <Image className={estiloTime.imgBarbeiro} src={barbeiro} />
+                                    <Image alt='image' className={estiloTime.imgBarbeiro} src={barbeiro} />
                                     <div className={estiloTime.boxCimaTx}>
                                         <h2>Ramon 2</h2>
                                         <p>Barbeiro Pleno</p>
                                         <p>Local : Rua Franz Volles Nº 1636</p>
                                         <div className={estiloTime.boxRedes}>
-                                            <Image className={estiloTime.imgRedes} src={insta} />
-                                            <Image className={estiloTime.imgRedes} src={face} />
-                                            <Image className={estiloTime.imgRedes} src={whats} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={insta} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={face} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={whats} />
                                         </div>
                                     </div>
                                 </div>
@@ -102,15 +135,15 @@ export default function Time() {
                             </div>
                             <div className={estiloTime.moldura}>
                                 <div className={estiloTime.boxCima}>
-                                    <Image className={estiloTime.imgBarbeiro} src={barbeiro} />
+                                    <Image alt='image' className={estiloTime.imgBarbeiro} src={barbeiro} />
                                     <div className={estiloTime.boxCimaTx}>
                                         <h2>Ramon 3</h2>
                                         <p>Barbeiro Sênior</p>
                                         <p>Local : Rua Franz Volles Nº 1636</p>
                                         <div className={estiloTime.boxRedes}>
-                                            <Image className={estiloTime.imgRedes} src={insta} />
-                                            <Image className={estiloTime.imgRedes} src={face} />
-                                            <Image className={estiloTime.imgRedes} src={whats} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={insta} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={face} />
+                                            <Image alt='image' className={estiloTime.imgRedes} src={whats} />
                                         </div>
                                     </div>
                                 </div>
@@ -126,10 +159,11 @@ export default function Time() {
 
 
                         <div  className={estiloTime.boxPrevNext}>
-                                <span onClick={prevSlide}>
+                                <span className={colorBtnRight} onClick={prevSlide}>
                                     <FontAwesomeIcon className={estiloTime.iconRight} icon={faChevronRight} />
                                 </span>
-                                <span onClick={BackSlide}>
+
+                                <span className={colorBtnLeft} onClick={BackSlide}>
                                     <FontAwesomeIcon className={estiloTime.iconLeft} icon={faChevronLeft} />
                                 </span>
                         </div>
@@ -146,7 +180,7 @@ export default function Time() {
 
             <div className={estiloTime.boxTarja}>
 
-                <Image className={estiloTime.imgTarja} src={tarja} />
+                <Image alt='image' className={estiloTime.imgTarja} src={tarja} />
 
             </div>
 
