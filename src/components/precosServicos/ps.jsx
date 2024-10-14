@@ -9,25 +9,132 @@ import logo from '../../../public/penteado.png'
 
 export default function Ps() {
 
+    // getBoundingClientRect()
 
 
+   
+    const boxConteudo = useRef([])
+    
+
+  
+
+    const [animaCont , setAnimaCont] = useState(estiloPs.animaContOff)
+    
+
+
+
+
+    useEffect(()=>{
+
+        const myobserver = new IntersectionObserver((elemento)=>{
+
+
+            elemento.forEach((elemento)=>{
+
+                if(elemento.isIntersecting){
+
+                    if(elemento.target === boxConteudo.current[0]){
+
+                        setAnimaCont(estiloPs.animaContOn)
+
+                        
+                    }
+
+                    if(elemento.target === boxConteudo.current[1]){
+
+                        setAnimaCont(estiloPs.animaContOn)
+                    }
+
+                    if(elemento.target === boxConteudo.current[2]){
+
+                        setAnimaCont(estiloPs.animaContOn)
+                    }
+
+                   
+
+                    
+
+                }else {
+
+                    if(elemento.target === boxConteudo.current[0]){
+
+                        setAnimaCont(estiloPs.animaContOff)
+                    }
+
+                    if(elemento.target === boxConteudo.current[1]){
+
+                        setAnimaCont(estiloPs.animaContOff)
+                    }
+
+                    if(elemento.target === boxConteudo.current[2]){
+
+                        setAnimaCont(estiloPs.animaContOff)
+                    }
+
+                    
+
+                }
+
+            })
+
+
+        })
+
+        
+      
+    
+        
+
+       
+       boxConteudo.current.forEach((boxConteudo)=>{
+
+           if(boxConteudo){
+
+            myobserver.observe(boxConteudo)
+
+           }
+
+       })
+
+        
+
+       return () => {
+
+        boxConteudo.current.forEach((boxConteudo)=>{
+
+            if(boxConteudo){
+ 
+             myobserver.unobserve(boxConteudo)
+ 
+            }
+ 
+        })
+       }
+
+    },[])
+
+
+
+     
+      
+      
+
+ 
 
     return (
 
         <section id='idpreco' className={estiloPs.boxPai}>
 
+
             <h1>Preços e Serviços</h1>
 
 
-
-
-
-            <div className={estiloPs.conteudo}>
+            <div className={`${estiloPs.conteudo}  `}>
 
                
 
 
-                <div className={estiloPs.cont1}>
+                <div ref={(el)=> (boxConteudo.current[0] = el)}  className={`${estiloPs.cont1} ${animaCont}`}>
 
                     {
 
@@ -58,7 +165,7 @@ export default function Ps() {
 
                 </div>
 
-                <div className={estiloPs.contMeio}>
+                <div ref={(el)=> (boxConteudo.current[1]= el)} className={`${estiloPs.contMeio} ${animaCont}`}>
 
                     <h2>Assinatura Mensal</h2>
 
@@ -88,7 +195,7 @@ export default function Ps() {
                 </div>
 
 
-                <div className={estiloPs.cont1}>
+                <div ref={(el)=> boxConteudo.current[2] = el} className={`${estiloPs.cont1} ${animaCont} ${estiloPs.cont2}`}>
 
                     {
 
@@ -120,7 +227,7 @@ export default function Ps() {
                 </div>
 
 
-                <div className={estiloPs.boxEscondido}>
+                <div  className={`${estiloPs.boxEscondido} `}>
 
                     {
 

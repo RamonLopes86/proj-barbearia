@@ -4,6 +4,8 @@
     font-size: 1.5rem;
     color: #E6BE53;
     background-color: #021B2F;
+    overflow: hidden;
+    
 
 }
 
@@ -26,7 +28,8 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-
+    
+    
 
 }
 
@@ -125,6 +128,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 
 }
 
@@ -144,6 +148,8 @@
     box-shadow: 0px 0px 15px #E6BE53;
     border-radius: 10px;
     gap: 5px;
+    
+   
 
     & p {
         text-align: justify;
@@ -244,6 +250,7 @@
 .boxEscondido {
 
     display: none;
+    
 }
 
 .boxEscondido .moldura p {
@@ -291,7 +298,50 @@
     font-weight: bold;
     font-size: 1.1rem;
     padding: 5px 0px;
+    
 
+}
+
+
+
+/* animacoes com scroll  */
+
+
+
+
+.boxPai .animaContOff{
+
+    transform: translateX(-100%);
+    filter: blur(10px);
+    transition: none;
+   opacity: 0;
+    
+}
+
+.boxPai .animaContOn{
+
+    transform:translateX(0);
+ 
+    filter: blur(0);
+    transition: 1s;
+    opacity: 1;
+}
+
+
+
+.conteudo div:nth-of-type(1){
+
+    transition-delay: 1s;
+}
+
+.conteudo div:nth-of-type(2){
+
+    transition-delay: 1.5s;
+}
+
+.conteudo div:nth-of-type(3){
+
+    transition-delay: 400ms;
 }
 
 
@@ -303,6 +353,7 @@
 
         max-width: 700px;
         margin: 0px auto;
+       
     }
 
     .boxPai .conteudo .contMeio {
@@ -346,7 +397,6 @@
 
 
 
-
     .boxPai .conteudo {
 
         display: flex;
@@ -371,7 +421,7 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
-
+        
     }
 
 
@@ -407,5 +457,31 @@
         margin: 0px auto;
 
     }
+
+
+
+    .boxPai .animaContOff{
+
+        transform:translateX(-50px);
+        filter: blur(10px);
+        transition: none;
+       opacity: 0;
+        
+    }
+    
+    .boxPai .animaContOn{
+    
+        transform:translateX(0);
+     
+        filter: blur(0);
+        transition: 1s;
+        opacity: 1;
+    }
+
+    .conteudo div:nth-of-type(2){
+
+        transition-delay: 0ms;
+    }
+    
 
 }
