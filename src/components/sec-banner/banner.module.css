@@ -249,6 +249,8 @@
     text-transform: uppercase;
     padding: 0px 20px;
     left:100px;
+  
+    
 
     & h1{
 
@@ -386,6 +388,7 @@
     border-radius: 0px 0px 8px 8px; 
     z-index:1;
     transition: 1s;
+  
     
 }
  
@@ -463,8 +466,6 @@
 
 
        
-
-
 .boxBanner .displayOn {
 
  
@@ -478,6 +479,20 @@
     transition: 300ms;
 }
 
+
+
+.boxBanner .txOn{
+
+    transform: translateX(0);
+    transition: 1s;
+}
+
+.boxBanner .txOff{
+
+        transform: translateX(-100vw);
+        transition: none;
+
+}
  
 
  @media screen and (max-width:500px) {
@@ -566,4 +581,8 @@
         justify-content: flex-start;
     }
 }
+
+
+
+
 

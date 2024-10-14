@@ -5,13 +5,19 @@
     font-size: 0.8rem;
     position: relative;
     top: 1px;
+   
 
 }
 
 .boxMaior {
 
     background-color: #021B2F;
-    min-height: 800px;
+    
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    
+    
 
     & h1 {
 
@@ -19,8 +25,20 @@
         font-size: 2.3rem;
         color: #E6BE53;
         text-transform: uppercase;
-        padding: 20px 10px 70px 10px;
+        padding: 0px 10px 70px 10px;
+        
     }
+        
+        
+}
+
+.boxMaior .scrollEscondido{
+
+    position: absolute;
+    visibility: hidden;
+    top: -100px;
+   
+    
 }
 
 .boxPai {
@@ -31,6 +49,7 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 0px 20px;
+    overflow: hidden;
 
 }
 
@@ -670,6 +689,61 @@
 }
 
 
+/* anima intersection */
+
+.animaBx1On{
+
+    transform: translateX(0);
+    transition: 1s;
+    opacity: 1;
+    transition-delay: 200ms;
+}
+
+
+.animaBx1Off{
+
+    transition: none;
+    transform: translateX(200px);
+    opacity: 0;
+
+}
+
+.animaBx2On{
+
+    transform: translateX(0);
+    transition: 1s;
+    opacity: 1;
+    transition-delay: 400ms;
+}
+
+
+.animaBx2Off{
+
+    transition: none;
+    transform:  translateX(-200px);
+    opacity: 0;
+
+}
+
+
+.imageIconOff{
+
+    transform:  translateX(-500px) ;
+    opacity: 0;
+    transition: none;
+}
+
+.imageIconOn{
+
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1s;
+    transition-delay:800ms;
+    
+}
+
+
+
 @media screen and (max-width:1170px) {
 
 
@@ -745,14 +819,6 @@
     }
 
 }
-
-
-
-
-
-
-
-
 
 
 

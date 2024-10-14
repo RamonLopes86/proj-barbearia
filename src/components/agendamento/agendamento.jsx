@@ -1,8 +1,11 @@
+'use client'
+
 import estiloAgend from './agendamento.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import seta from '../../../public/setaEsquerda.png'
+import React, {useState  , useRef , useEffect} from 'react';
 
 
 
@@ -11,15 +14,98 @@ import seta from '../../../public/setaEsquerda.png'
 
 export default function Agendamento() {
 
+   const [useBox1 , setUseBox1] = useState(estiloAgend.animaBx1Off)
+   const [useBox2 , setUseBox2] = useState(estiloAgend.animaBx2Off)
+   const [useImage , setUseImage] = useState(estiloAgend.imageIconOff)
+ 
+    
+
+    const boxRef = useRef([])
+    
+
+
+   
+
+
+    useEffect(()=>{
+
+        const myObserver = new IntersectionObserver((el)=>{
+
+            el.forEach((el)=>{
+
+                if(el.isIntersecting){
+
+
+                    if(el.target === boxRef.current[0]){
+
+                        setUseBox1(estiloAgend.animaBx1On)
+                    }else if(el.target === boxRef.current[1]){
+
+                        setUseBox2(estiloAgend.animaBx2On)
+                    }else if(el.target === boxRef.current[2]){
+
+                        setUseImage(estiloAgend.imageIconOn)
+                    }
+
+                }else{
+
+                    if(el.target === boxRef.current[0]){
+
+                        setUseBox1(estiloAgend.animaBx1Off)
+                    }else if(el.target === boxRef.current[1]){
+
+                        setUseBox2(estiloAgend.animaBx2Off)
+                    }else if(el.target === boxRef.current[2]){
+
+                        setUseImage(estiloAgend.imageIconOff)
+                    }
+
+
+                }
+
+            })
+
+
+           
+        })
+
+
+
+
+
+        boxRef.current.forEach((boxRef)=>{
+
+            myObserver.observe(boxRef)
+
+        })
+
+
+        return () => {
+
+            boxRef.current.forEach((boxRef)=>{
+
+                myObserver.unobserve(boxRef)
+
+            })
+
+        }
+
+
+    },[])
+    
+    
+
     return (
 
-        <section id='idagendamento' className={estiloAgend.boxMaior}>
+        <section  className={estiloAgend.boxMaior}>
 
-            <h1>Agendamento</h1>
+            <div id='idagendamento' className={estiloAgend.scrollEscondido}>.</div>
+
+            <h1  >Agendamento</h1>
 
             <section className={estiloAgend.boxPai}>
 
-                <div className={estiloAgend.boxAgendamento}>
+                <div ref={(el) => boxRef.current[0]= el} className={`${estiloAgend.boxAgendamento}  ${useBox1}` }>
 
                     <h3>Faça seu Agendamento Aqui</h3>
 
@@ -151,16 +237,18 @@ export default function Agendamento() {
                 </div>
 
                 
-                <div className={estiloAgend.Arrow}>
+                <div  ref={(el)=> boxRef.current[2] = el}  className={`${estiloAgend.Arrow} ${useImage}`}>
 
-                                <Image alt='image' className={estiloAgend.imgSeta} src={seta}/>
+                   
 
-                    </div>
+                                <Image   alt='image' className={`${estiloAgend.imgSeta}`} src={seta}/>
+
+                </div>
 
 
-                <div className={estiloAgend.boxInfo}>
+                <div ref={(el)=> boxRef.current[1]= el}  className={`${estiloAgend.boxInfo} ${useBox2} `}>
 
-                    <div className={estiloAgend.boxInfoFilho}>
+                    <div className={`${estiloAgend.boxInfoFilho} `}>
 
                         <h1>Confira suas informações</h1>
 

@@ -20,6 +20,8 @@
     left: 50%;
     width: 100%;
     transform: translate(-50% , -50%);
+   
+    
 
 }
 
@@ -30,6 +32,7 @@
 .boxMaior .boxMolduras .boxOverflow{
 
     position: relative;
+   
 
 }
 
@@ -44,7 +47,7 @@
     padding-top: 80px;
     padding-bottom: 10px;
     width: 100%;  
-    
+   
     
 }
 
@@ -63,9 +66,11 @@
     font-size: 2.3rem;
     text-align: center;
     text-transform: uppercase;
-    padding: 20px 10px;
+    padding: 80px 10px 0px 10px;
 
+    
 }
+
 
 .boxMaior .boxTarja{
 
@@ -171,6 +176,7 @@
     flex: none;
     
     
+    
 }
 
 .boxMaior .boxMolduras .moldura .boxCima .boxCimaTx > h2{
@@ -252,6 +258,23 @@
 }
 
 
+
+.animaMoldOn{
+
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 900ms;
+    transition-delay: 400ms;
+
+}
+
+.boxMaior .animaMoldOff{
+
+    transform: translateX(-20vw) ;
+    opacity: 0;
+    transition: none;
+
+}
     
 
 

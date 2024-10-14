@@ -11,73 +11,57 @@ export default function Ps() {
 
     // getBoundingClientRect()
 
-
-   
     const boxConteudo = useRef([])
-    
+
     const [animaCont , setAnimaCont] = useState(estiloPs.animaContOff)
-
-  
-
-    
-
-
-
+    const[animaCont2 , setAnimaCont2] = useState(estiloPs.animaContMeioOff)
 
     useEffect(()=>{
 
         const myobserver = new IntersectionObserver((elemento)=>{
 
 
-            elemento.forEach((elemento)=>{
+                elemento.forEach((elemento)=>{
 
-                if(elemento.isIntersecting){
+                    if(elemento.isIntersecting){
 
-                    if(elemento.target === boxConteudo.current[0]){
+                        if(elemento.target === boxConteudo.current[0]){
 
-                        setAnimaCont(estiloPs.animaContOn)
+                            setAnimaCont(estiloPs.animaContOn)
+                            
+                        }
 
+                        if(elemento.target === boxConteudo.current[1]){
+
+                            setAnimaCont2(estiloPs.animaContMeioOn)
+                           
+                        }
+
+                        if(elemento.target === boxConteudo.current[2]){
+
+                            setAnimaCont(estiloPs.animaContOn)
+                        }
                         
+                    }else{
+
+                        if(elemento.target === boxConteudo.current[0]){
+
+                            setAnimaCont(estiloPs.animaContOff)
+                        }
+
+                        if(elemento.target === boxConteudo.current[1]){
+
+                            setAnimaCont2(estiloPs.animaContMeioOff)
+                        }
+
+                        if(elemento.target === boxConteudo.current[2]){
+
+                            setAnimaCont(estiloPs.animaContOff)
+                        }
                     }
 
-                    if(elemento.target === boxConteudo.current[1]){
 
-                        setAnimaCont(estiloPs.animaContOn)
-
-                      
-                    }
-
-                    if(elemento.target === boxConteudo.current[2]){
-
-                        setAnimaCont(estiloPs.animaContOn)
-                    }
-
-
-                
-                    
-
-                }else {
-
-                    if(elemento.target === boxConteudo.current[0]){
-
-                        setAnimaCont(estiloPs.animaContOff)
-                    }
-
-                    if(elemento.target === boxConteudo.current[1]){
-
-                        setAnimaCont(estiloPs.animaContOff)
-                    }
-
-                    if(elemento.target === boxConteudo.current[2]){
-
-                        setAnimaCont(estiloPs.animaContOff)
-                    }
-
-                    
-
-                }
-
-            })
+                })
 
 
         })
@@ -120,22 +104,16 @@ export default function Ps() {
     },[])
 
 
-    
-     
-     
-      
-
- 
 
     return (
 
-        <section id='idpreco' className={estiloPs.boxPai}>
+        <section className={estiloPs.boxPai}>
 
 
-            <h1>Preços e Serviços</h1>
+            <h1 >Preços e Serviços</h1>
 
 
-            <div className={`${estiloPs.conteudo}  `}>
+            <div   className={`${estiloPs.conteudo}  `}>
 
                
 
@@ -171,7 +149,7 @@ export default function Ps() {
 
                 </div>
 
-                <div ref={(el)=> (boxConteudo.current[1]= el)} className={`${estiloPs.contMeio} ${animaCont}`}>
+                <div ref={(el) => (boxConteudo.current[1]= el)} className={`${estiloPs.contMeio} ${animaCont2}`}>
 
                     <h2>Assinatura Mensal</h2>
 
@@ -192,7 +170,7 @@ export default function Ps() {
                         </div>
                         
                      
-                        <button className={estiloPs.btnSaibaMais}>Saiba Mais</button>
+                        <button  className={estiloPs.btnSaibaMais}>Saiba Mais</button>
                            
                        
 

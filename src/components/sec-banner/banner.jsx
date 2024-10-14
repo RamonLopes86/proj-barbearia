@@ -27,11 +27,15 @@ export default function Banner() {
 
     const [displayLogin, setDisplayLogin] = useState(estiloBanner.displayOff)
 
+    const [cond , setCond] = useState(false)
+  
+
     const [ham, setHam] = useState(faPowerOff)
 
-
-
+    
     const boxNav = useRef()
+
+
 
 
 
@@ -143,6 +147,36 @@ export default function Banner() {
 
 
 
+
+
+    useEffect(()=>{
+
+        if(window.scrollY >=0 && window.scrollY < 980){
+
+            setCond(true)
+        }
+
+
+        function moveTx(){
+
+            if(window.scrollY >= 0 && window.scrollY < 980){
+    
+                setCond(true)
+    
+            }else if(window.scrollY > 500 ){
+    
+                setCond(false)
+            }
+    
+    
+    
+        }
+
+        window.addEventListener('scroll' , moveTx)
+
+    },[])
+  
+
     return (
 
         <section className={estiloBanner.boxBanner}>
@@ -226,7 +260,7 @@ export default function Banner() {
             </div>
 
 
-            <div className={estiloBanner.boxTexto}>
+            <div  className={`${estiloBanner.boxTexto} ${cond ? estiloBanner.txOn : estiloBanner.txOff} `}>
 
                 <div className={estiloBanner.boxFilhoTexto}>
 
@@ -250,7 +284,7 @@ export default function Banner() {
                             <Image alt='imagens' className={estiloBanner.icon} src={face} />
                         </div>
 
-                        <div className={estiloBanner.boxImg}>
+                        <div id='idpreco' className={estiloBanner.boxImg}>
                             <Image alt='imagens' className={estiloBanner.icon} src={insta} />
                         </div>
 

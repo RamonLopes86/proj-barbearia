@@ -17,11 +17,14 @@ import react , {useState , useRef , useEffect} from 'react';
 
 export default function Time() {
 
-    const boxRef = useRef()
+   
     const [colorBtnLeft , setColorBtnLeft] = useState (estiloTime.colorOn)
     const [colorBtnRight , setColorBtnRight] = useState ()
 
+    const [animaMoldura , setAnimaMoldura] = useState(estiloTime.animaMoldOff)
     
+    const boxMolduraRef = useRef()
+    const boxRef = useRef()
 
     function prevSlide(){
 
@@ -74,25 +77,60 @@ export default function Time() {
       
     
    
+    useEffect(() =>{
+
+
+      const myObserver = new IntersectionObserver((el)=>{
+
+            el.forEach((el)=>{
+                if(el.isIntersecting){
+
+                    setAnimaMoldura(estiloTime.animaMoldOn)
+
+                }else{
+
+                    setAnimaMoldura(estiloTime.animaMoldOff)
+                }
+            })
+
+
+      })  
+
+
+      if(boxMolduraRef.current){
+
+        myObserver.observe(boxMolduraRef.current)
+      }
+
+
+      return ()=> {
+
+        if(boxMolduraRef){
+
+            myObserver.unobserve(boxMolduraRef.current)
+        }
+      }
+
+    },[])
 
 
 
     return (
 
-        <section id='idtime'  className={estiloTime.boxMaior}>
+        <section   id='idtime'  className={estiloTime.boxMaior}>
 
             <h1>Time</h1>
 
             
 
-                <section  className={estiloTime.boxMolduras}>
+                <section   className={`${estiloTime.boxMolduras} `}>
 
 
-                    <section className={estiloTime.boxOverflow}>
+                    <section ref={boxMolduraRef}   className={estiloTime.boxOverflow}>
                         
-                        <div ref={boxRef} className={estiloTime.positionButton}>
+                        <div ref={boxRef}  className={`${estiloTime.positionButton} ${animaMoldura}`}>
 
-                            <div className={estiloTime.moldura}>
+                            <div className={`${estiloTime.moldura} `}>
                             
                                 <div className={estiloTime.boxCima}>
                                     <Image alt='imagem' className={estiloTime.imgBarbeiro} src={barbeiro} />
@@ -113,7 +151,7 @@ export default function Time() {
                                     </p>
                                 </div>
                             </div>
-                            <div className={estiloTime.moldura}>
+                            <div  className={estiloTime.moldura}>
                                 <div className={estiloTime.boxCima}>
                                     <Image alt='image' className={estiloTime.imgBarbeiro} src={barbeiro} />
                                     <div className={estiloTime.boxCimaTx}>
