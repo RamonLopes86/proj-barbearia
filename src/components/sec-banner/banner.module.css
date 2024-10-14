@@ -552,5 +552,18 @@
             opacity: 1;
             transform: translateX(0);
         }
+
+      
+}
+
+
+
+@media screen and (max-width:415px) {
+
+    .boxBanner .boxTexto .boxFilhoTexto  .boxBotao{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
 }
 

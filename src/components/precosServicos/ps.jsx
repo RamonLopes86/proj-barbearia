@@ -15,10 +15,10 @@ export default function Ps() {
    
     const boxConteudo = useRef([])
     
+    const [animaCont , setAnimaCont] = useState(estiloPs.animaContOff)
 
   
 
-    const [animaCont , setAnimaCont] = useState(estiloPs.animaContOff)
     
 
 
@@ -43,6 +43,8 @@ export default function Ps() {
                     if(elemento.target === boxConteudo.current[1]){
 
                         setAnimaCont(estiloPs.animaContOn)
+
+                      
                     }
 
                     if(elemento.target === boxConteudo.current[2]){
@@ -50,8 +52,8 @@ export default function Ps() {
                         setAnimaCont(estiloPs.animaContOn)
                     }
 
-                   
 
+                
                     
 
                 }else {
@@ -96,7 +98,9 @@ export default function Ps() {
 
        })
 
-        
+
+       
+
 
        return () => {
 
@@ -109,14 +113,16 @@ export default function Ps() {
             }
  
         })
+
+        
        }
 
     },[])
 
 
-
+    
      
-      
+     
       
 
  
