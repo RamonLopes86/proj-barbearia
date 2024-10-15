@@ -37,11 +37,6 @@ export default function Banner() {
 
 
 
-
-
-
-
-
     function clickMenuEscondido() {
 
         setAlert(alert === estiloBanner.alertOff ? estiloBanner.alertOn : estiloBanner.alertOff)

@@ -5,7 +5,7 @@
     background-color: white;
     top: 220px;
     left: 50%;
-    z-index: 1;
+    z-index:1;
     transform: translate(-50%);
     color: black;
     padding: 20px 10px;
@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    
+
     
 
     & h1{
@@ -140,7 +140,7 @@
 
 
 
-.boxPaiModal .boxFilho  .boxFormulario .boxUsuario input + label{
+/* .boxPaiModal .boxFilho  .boxFormulario .boxUsuario input + label{
 
     transform: translateY(0);
     transition: 400ms;
@@ -156,10 +156,10 @@
     font-size: 0.9rem;
     font-weight: bold;
 
-}
+} */
 
 
-.boxPaiModal .boxFilho  .boxFormulario .boxSenha input + label{
+/* .boxPaiModal .boxFilho  .boxFormulario .boxSenha input + label{
 
     transform: translateY(0);
     transition: 400ms;
@@ -175,7 +175,54 @@
     font-size: 0.9rem;
     font-weight: bold;
 
+} */
+
+
+/* efeito on focus login  */
+
+.boxPaiModal .boxFilho .boxFormulario  .boxAnimaInputOn{
+
+    transform: translateY(-20px);
+    transition: 400ms;
+    color: #0D3E68 !important;
+    font-size: 0.9rem !important;
+    font-weight: bold;
+   
+
 }
+
+.boxPaiModal .boxFilho .boxFormulario .boxAnimaInputOff{
+
+    transform: translateY(0);
+    transition: 400ms;
+    
+}
+
+
+.boxPaiModal .boxFilho  .boxFormulario  .tarjaOff{
+
+    width: 0% ;
+    height: 2px ;
+    background-color:#0D3E68 ;
+    position: absolute ;
+    transition: 300ms ;
+       
+}
+
+.boxPaiModal .boxFilho  .boxFormulario  .tarjaOn{
+
+    width:100% ;
+    transition: 300ms;
+    background-color:#0D3E68;
+    height: 2px;
+    position: absolute;
+
+}
+
+
+
+
+/* ------------------------------------------------------ */
 
    
 
@@ -235,7 +282,26 @@
 }
 
 
-.boxPaiModal .boxFilho  .boxFormulario .boxSenha p{
+
+@media screen and (max-width:440px) {
+
+    .boxMaior{
+
+       width: calc(100% -40px);
+       margin: 0px 20px;
+    }
+    
+
+    .boxPaiModal{
+
+        width: 100%;
+        
+
+    }
+}
+
+
+/* .boxPaiModal .boxFilho  .boxFormulario .boxSenha p{
 
     width: 0%;
     height: 2px;
@@ -249,23 +315,8 @@
 
     width: 100%;
    
-}
+} */
 
-.boxPaiModal .boxFilho  .boxFormulario .boxUsuario p{
-
-    width: 0%;
-    height: 2px;
-    background-color:#0D3E68;
-    position: absolute;
-    transition: 300ms;
-       
-}
-
-.boxPaiModal .boxFilho  .boxFormulario .boxUsuario input:focus ~ p{
-
-    width: 100%;
-   
-}
 
 
 

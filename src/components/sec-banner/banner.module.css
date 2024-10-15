@@ -40,6 +40,7 @@
     flex-direction: row;
     gap: 20px;
     align-items: center;
+    
 }
 
 .boxBanner .boxNav .boxLogin p{
@@ -174,6 +175,7 @@
     top: 110%;
     right: 20px;
     transition: 800ms;
+    z-index: 1;
 
 }
    
@@ -249,13 +251,17 @@
     text-transform: uppercase;
     padding: 0px 20px;
     left:100px;
+    
   
     
 
     & h1{
 
-        font-size: 2rem;
+        font-size:5vw;
         letter-spacing: 1px;
+        
+        
+        
     }
 
     & h3{
@@ -278,7 +284,7 @@
 
 .boxBanner .boxTexto .boxFilhoTexto{
 
-    max-width: 800px;
+    max-width: 850px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -521,6 +527,9 @@
 
 
 
+
+
+
 @media screen and (max-width:1000px) {
 
     .boxBanner .boxTexto{
@@ -551,6 +560,8 @@
 
         display: none;
     }
+
+    
 
 }
 
