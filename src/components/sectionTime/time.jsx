@@ -105,7 +105,7 @@ export default function Time() {
 
       return ()=> {
 
-        if(boxMolduraRef){
+        if(boxMolduraRef.current){
 
             myObserver.unobserve(boxMolduraRef.current)
         }

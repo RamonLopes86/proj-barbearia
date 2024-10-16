@@ -75,7 +75,10 @@ export default function Agendamento() {
 
         boxRef.current.forEach((boxRef)=>{
 
+           if(boxRef){
+
             myObserver.observe(boxRef)
+           }
 
         })
 
@@ -84,7 +87,10 @@ export default function Agendamento() {
 
             boxRef.current.forEach((boxRef)=>{
 
-                myObserver.unobserve(boxRef)
+                if(boxRef){
+
+                    myObserver.unobserve(boxRef)
+                }
 
             })
 

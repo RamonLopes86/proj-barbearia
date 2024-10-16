@@ -26,7 +26,10 @@
         background-image: linear-gradient(to left , #FED45C , #977555 );
         background-clip: text;
         color: transparent;
+           
     }
+        
+        
 
     
 }
@@ -140,7 +143,7 @@
 
 
 
-/* .boxPaiModal .boxFilho  .boxFormulario .boxUsuario input + label{
+.boxPaiModal .boxFilho  .boxFormulario .boxUsuario input + label{
 
     transform: translateY(0);
     transition: 400ms;
@@ -156,10 +159,10 @@
     font-size: 0.9rem;
     font-weight: bold;
 
-} */
+} 
 
 
-/* .boxPaiModal .boxFilho  .boxFormulario .boxSenha input + label{
+ .boxPaiModal .boxFilho  .boxFormulario .boxSenha input + label{
 
     transform: translateY(0);
     transition: 400ms;
@@ -175,12 +178,12 @@
     font-size: 0.9rem;
     font-weight: bold;
 
-} */
+}
 
 
 /* efeito on focus login  */
 
-.boxPaiModal .boxFilho .boxFormulario  .boxAnimaInputOn{
+/* .boxPaiModal .boxFilho .boxFormulario  .boxAnimaInputOn{
 
     transform: translateY(-20px);
     transition: 400ms;
@@ -217,7 +220,7 @@
     height: 2px;
     position: absolute;
 
-}
+} */
 
 
 
@@ -283,25 +286,9 @@
 
 
 
-@media screen and (max-width:440px) {
-
-    .boxMaior{
-
-       width: calc(100% -40px);
-       margin: 0px 20px;
-    }
-    
-
-    .boxPaiModal{
-
-        width: 100%;
-        
-
-    }
-}
 
 
-/* .boxPaiModal .boxFilho  .boxFormulario .boxSenha p{
+.boxPaiModal .boxFilho  .boxFormulario .boxSenha p{
 
     width: 0%;
     height: 2px;
@@ -315,7 +302,77 @@
 
     width: 100%;
    
-} */
+}
+
+.boxPaiModal .boxFilho  .boxFormulario .boxUsuario p{
+
+    width: 0%;
+    height: 2px;
+    background-color:#0D3E68;
+    position: absolute;
+    transition: 300ms;
+       
+}
+
+.boxPaiModal .boxFilho  .boxFormulario .boxUsuario input:focus ~ p{
+
+    width: 100%;
+   
+}
+
+
+.boxPaiModal .boxFilho  .boxFormulario .boxUsuario input:not(:placeholder-shown) + label{
+
+    transform: translateY(-20px);
+    transition: 400ms;
+    color: #0D3E68;
+    font-size: 0.9rem;
+    font-weight: bold;
+   
+}
+
+.boxPaiModal .boxFilho  .boxFormulario .boxSenha input:not(:placeholder-shown) + label{
+
+    transform: translateY(-20px);
+    transition: 400ms;
+    color: #0D3E68;
+    font-size: 0.9rem;
+    font-weight: bold;
+   
+}
+
+
+.boxPaiModal .boxFilho  .boxFormulario .boxUsuario input:not(:placeholder-shown) ~ p{
+
+   width: 100%;
+   
+}
+
+.boxPaiModal .boxFilho  .boxFormulario .boxSenha input:not(:placeholder-shown) ~ p{
+
+    width: 100%;
+}
+
+
+
+
+
+@media screen and (max-width:440px) {
+
+    .boxMaior{
+
+       width: calc(100% -40px);
+       margin: 0px 20px;
+    }
+    
+
+    .boxPaiModal{
+
+        width: 90%;
+        
+
+    }
+}
 
 
 
