@@ -1,0 +1,279 @@
+.boxPai{
+
+    width: 100%;
+    min-height:100vh;
+    background-image: url(../../../public/bg-image-no-person.png);
+    background-position: center;
+    background-repeat: repeat;
+    background-size:cover;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.boxPai .msg {
+
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 32px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    
+}
+
+    
+
+  .sair , .entrar{
+
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    color: white;
+  }
+
+  .sair{
+
+    bottom: -5px;
+    left: 30%;
+    transform: translate(-50%);
+    transform: rotate(180deg);
+    transition: 500ms;
+    
+  }
+
+  .entrar{
+
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 1s;
+    transition: 500ms;
+    
+  
+  }
+
+  
+  .boxPai .boxOver{
+
+    
+    width: fit-content;
+    height: 39px;
+    overflow: hidden;
+    padding-top: 10px;
+
+    position: absolute;
+    top: 25px;
+    right: 10px;
+  
+  }
+
+
+  .boxPai  .boxOver .boxImgs{
+
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+     border-radius: 50%;
+     position: relative;
+     transition: 500ms;
+    
+    }
+    
+   
+
+  .boxImgsAnima{
+
+    transform: rotate(180deg);
+   
+  }
+
+ 
+
+
+  .boxPai  .boxOver .boxImgs .sair:hover{
+
+    color: yellow;
+    transition: 500ms;
+    transform: rotate(180deg) scale(1.2);
+  }
+  .boxPai  .boxOver .boxImgs .entrar:hover{
+
+    color: yellow;
+    transition: 500ms;
+    transform:  translate(-50%) scale(1.2);
+}
+
+
+.boxPai .boxFilho{
+
+    width: 800px;
+    padding: 0px 10px;
+}
+
+.boxPai .boxFilho .boxTitulo{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 10px;
+    
+
+    & .logo{
+
+        width: 150px;
+        height: 150px;
+        filter: drop-shadow(0px 0px 10px white);
+    }
+
+    
+}
+
+.boxPai .boxFilho .boxTitulo .boxTx p{
+
+
+        font-size: rem;
+        color: #fed35cc7;
+}
+
+
+.boxPai .boxFilho .boxTitulo .boxTx h1{
+
+    font-size: 2.4rem;
+    color: #FED45C;
+}
+    
+    
+
+.boxPai .boxFilho .boxPainelControle{
+
+    
+    width:100%;
+    min-height: 250px;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.boxPai .boxFilho .boxPainelControle .boxBotoes{
+
+        
+        min-height: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;   
+        padding: 10px;          
+        max-width: 600px;
+    
+}
+
+.boxPai .boxFilho .boxPainelControle .boxBotoes button{
+
+
+        flex: auto;
+        width: 300px;
+        padding: 20px;
+        flex-basis: 200px;
+        border: none;
+        font: 1.2rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 8px;
+        background-color:#FED45C;
+        color: rgba(54, 54, 54, 0.877);
+        font-weight: bolder;
+        transition: 500ms;
+        
+}
+
+.boxPai .boxFilho .boxPainelControle .boxBotoes button:hover{
+
+    transform: translateY(-5px) ;
+    transition: 500ms;
+    
+}
+
+
+
+
+@media screen and (max-width:460px) {
+
+    
+    .boxPai .boxFilho .boxTitulo .boxTx h1{
+
+        font-size: 5vw;
+       
+    }
+
+
+}
+
+
+@media screen and (max-width:440px) {
+
+    .boxPai .boxFilho .boxPainelControle{
+
+        width: 100%;
+        padding: 0px 20px;
+    }
+
+    .boxPai .boxFilho .boxPainelControle .boxBotoes  button {
+
+            width: 100%;
+            flex: auto;
+
+    }
+
+
+    
+.boxPai .boxFilho .boxTitulo{
+
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.boxPai .boxFilho .boxTitulo .boxTx h1{
+
+    padding-left: 20px;
+
+}
+
+.boxPai .boxFilho .boxTitulo .boxTx p{
+
+    padding-left: 20px;
+
+}
+    
+
+
+}
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+  
+
+
+
+
