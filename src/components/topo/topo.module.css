@@ -89,12 +89,25 @@ width: 100%;
    
 }
 
+
+@media screen and (max-width:320px) {
+
+    
+    .boxPai .boxEndereco{
+
+        display: none;
+    }
+   
+
+}
+
 @media screen and (max-width:500px) {
 
 
     .boxPai .boxEndereco {
 
         flex-wrap: wrap;
+        justify-content: flex-start;
         
     }
    

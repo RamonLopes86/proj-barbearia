@@ -53,11 +53,19 @@ export default function ModalLogin(props){
     
             
             <section className={`${estiloModal.boxPaiModal} ${props.telaLogin} `}>
+
                 <section className={estiloModal.boxFilho}>
+
                         < FontAwesomeIcon icon={faX} onClick={props.closeLogin} className={estiloModal.iconXis} />
-                        <h1>Bem vindo</h1>
-                        <Image className={estiloModal.iconImg} src={logo}/>
+
+                        <div className={estiloModal.boxTxImg}>
+                            
+                            <h1>Bem vindo</h1>
+                            <Image className={estiloModal.iconImg} src={logo}/>
+                        </div>
+
                         <form  className={estiloModal.boxFormulario} action="#">
+
                            <div className={estiloModal.boxUsuario}>
                                 <input  placeholder=' '   onChange={changeLogin}   value={TxinputLogin}   type="text" name="login" id="idlogin" autoComplete='off' />
                                 <label   htmlFor="idusuario">usuário</label>

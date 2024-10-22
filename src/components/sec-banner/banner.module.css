@@ -594,6 +594,64 @@
 }
 
 
+@media screen and (max-width:375px) {
+
+    .boxBanner .boxTexto{
+
+        top: 45%;
+    }
+
+
+
+
+        .boxBanner .iHamburgerIcon .iconHamburger{
+
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: -50px;
+            
+        }
+
+      .boxBanner .boxNav .iconHam{
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            right: 10px;
+            
+        }
+            
+
+        .boxBanner .boxNav .imgLogo{
+
+            display: none;
+            
+        }
+
+        .boxBanner .boxNav {
+
+            padding: 35px;
+           
+        }
+
+        
+
+        
+
+}
+
+
+@media screen and (max-width:320px) {
+
+    .boxBanner .boxTexto{
+
+        top: 25%;
+    }
+
+
+}
+
+
 
 
 
