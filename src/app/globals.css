@@ -24,4 +24,25 @@ html{
 }
 
 
+::-webkit-scrollbar{
+
+    background-color: #daa20a;
+    width: 8px;
+    
+}
+
+::-webkit-scrollbar-thumb{
+
+    background-color: #0b2438;
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+        cursor:grab;
+}
+
+
+
 

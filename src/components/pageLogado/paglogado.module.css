@@ -11,6 +11,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    
     
 }
 
@@ -206,6 +208,62 @@
 }
 
 
+.boxPai .boxExit{
+
+
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 45%;
+
+  transition: 1s;
+  font-size: 3rem;
+  text-align: center;
+  background-color: #08518d;
+  border-left: 8px solid #FED45C ;
+  padding: 4px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  gap: 20px;
+    
+
+}
+
+
+
+
+.boxPai .boxExit  p:nth-last-of-type(1) {
+
+  font-size: 2rem;
+  text-transform: uppercase;
+
+}
+
+.boxPai .boxExit  p:nth-last-of-type(2) {
+
+  font-size: 1rem;
+  text-transform: uppercase;
+
+}
+
+
+.numerAnimaOff{
+
+  transform:  translateY(-100%);
+  opacity: 0;
+  transition: 1s;
+}
+
+.numerAnimaOnn{
+
+  transform: translateY(0vw)   ;
+  opacity: 1;
+  transition: 1s;
+
+}
+
 
 
 @media screen and (max-width:460px) {
@@ -258,6 +316,19 @@
 }
     
 
+
+}
+
+
+
+@media screen and (max-width:700px) {
+
+
+    .boxPai  .boxExit{
+     
+      left: 5px;
+   
+    }
 
 }
 

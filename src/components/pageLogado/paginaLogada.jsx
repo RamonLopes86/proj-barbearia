@@ -15,20 +15,56 @@ export default function PaginaLogada(){
 
 
     const [animaLogon , setAnimaLogon] = useState(null)
+    const [modalExit , setModalExit] = useState(3)
+    const [modalAnima, setModalAnima] = useState(estiloPglogado.numerAnimaOff)
 
     const router = useRouter()
 
+
+    
+
     function clickLogon(){
 
-        setAnimaLogon(animaLogon === null ? estiloPglogado.boxImgsAnima : null)
+      
+        setAnimaLogon(estiloPglogado.boxImgsAnima)
+
+        setModalAnima(estiloPglogado.numerAnimaOn)
+
+
+
+    
+
+        let intervalo = setInterval(()=>{
+
+
+            setModalExit(prev => {
+   
+               if (prev === 1){
+   
+               clearInterval(intervalo)
+   
+               router.push('./')   
+               return 0         
+               
+                 
+               }else{
+   
+                   return prev - 1
+               }
+   
+            })
+         
+           }, 1000)
+
+    
         
-        setTimeout(()=>{
 
-            router.push('./')
-
-        }, 1000)
     }
+       
 
+   
+    
+    
 
     return(
 
@@ -88,6 +124,16 @@ export default function PaginaLogada(){
 
                     </div>
 
+            </section>
+
+
+            <section className={`${estiloPglogado.boxExit} ${modalAnima}`} >
+                    
+
+                        <p>saindo em ...</p>
+
+                        <p>{modalExit}</p>
+                 
             </section>
 
                 
