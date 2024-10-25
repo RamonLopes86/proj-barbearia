@@ -14,6 +14,7 @@ import wpp from '../../../public/wpp.png';
 import face from '../../../public/facebook.png';
 import insta from '../../../public/instagram.png';
 import ModalLogin from '../modalLogin/modal';
+import AlertMsg from '../alertLogin/alert';
 
 
 import react, { useState, useRef, useEffect } from 'react';
@@ -250,7 +251,7 @@ export default function Banner() {
                 />
 
 
-
+                <AlertMsg/> 
 
             </div>
 

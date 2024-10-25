@@ -8,6 +8,7 @@ import Time from "@/components/sectionTime/time";
 import Rodape from "@/components/footer/footer";
 
 
+
 export default function Home() {
   return (
 
@@ -20,6 +21,8 @@ export default function Home() {
             <Agendamento/>
             <Time/>
             <Rodape/>
+
+           
         
         </main>
 

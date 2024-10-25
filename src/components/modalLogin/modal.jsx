@@ -10,6 +10,9 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
 
+
+
+
  
 
 export default function ModalLogin(props){
@@ -65,11 +68,15 @@ export default function ModalLogin(props){
             
              if(response.data.length === 1){
 
+
                 router.push('./pagelogado')
 
             }else if(response.data.msg === 'preencha os campos'){
+
                 alert('preencha os campos')
+                
             }else if(response.data.msg === 'senha incorreta'){
+
 
                 alert('senha incorreta')
             }
@@ -135,6 +142,10 @@ export default function ModalLogin(props){
                         </form>
             
                 </section>
+
+               
+
+
             </section>
        
     )
