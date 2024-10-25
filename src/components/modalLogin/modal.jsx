@@ -6,18 +6,25 @@ import logo from '../../../public/penteado.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faX} from '@fortawesome/free-solid-svg-icons'
 import React,{useState , useRef , useEffect} from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 
+ 
 
 export default function ModalLogin(props){
 
+  
     
-
     const [TxinputLogin , setTxInputLogin] = useState('')
     const [senha , setSenha] = useState('')
 
+    const urlLogar = 'http://localhost:8000/logar'
 
-
+    const router = useRouter()
+    
+   
+   
 
     function changeLogin(ev){
 
@@ -29,23 +36,85 @@ export default function ModalLogin(props){
     function changeSenha(ev){
  
  
-     setSenha(ev.target.value)
- 
- 
+        setSenha(ev.target.value)
+
+        
     }
+ 
 
 
-         
-
-      
-
-
-
-    function logar(ev){
+   async function logar(ev){
 
         ev.preventDefault()
 
+        const vl = {
+
+            user:TxinputLogin,
+            senha:senha
+    
+        }
+        
+        
+        
+
+       
+
+           
+
+       
+           
+              
+        if(TxinputLogin.length === 0 || senha.length === 0){
+
+            
+            alert('preencha os campos')
+             
+              
+        }
+
+            
+
+        
+        const response = await axios.post(urlLogar , vl)
+
+        console.log(response.data)
+    
+
+        try {
+
+            // trecho de codigo com potencial para falhar
+
+            const response = await axios.post(urlLogar , vl)
+           
+            
+             if(response.data.length === 1){
+
+                router.push('./pagelogado')
+
+            }else{
+                alert('senha inco')
+            }
+
+            
+           
+
+
+        } catch (error) {
+
+            // trecho de codigo que sera executado caso falhe
+
+            alert(error.mesage)
+            
+        }
+        
+        
+
+        
     }
+        
+        
+
+
 
 
     return(
@@ -61,6 +130,7 @@ export default function ModalLogin(props){
                         <div className={estiloModal.boxTxImg}>
                             
                             <h1>Bem vindo</h1>
+
                             <Image className={estiloModal.iconImg} src={logo}/>
                         </div>
 

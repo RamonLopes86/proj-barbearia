@@ -7,17 +7,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPersonRunning , faDoorOpen } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../../../public/penteado.png'
 import React , {useState , useRef , useEffect} from 'react'
+import { useRouter } from 'next/navigation'
 
 
 
 export default function PaginaLogada(){
 
+
     const [animaLogon , setAnimaLogon] = useState(null)
+
+    const router = useRouter()
 
     function clickLogon(){
 
         setAnimaLogon(animaLogon === null ? estiloPglogado.boxImgsAnima : null)
+        
+        setTimeout(()=>{
 
+            router.push('./')
+
+        }, 1000)
     }
 
 
