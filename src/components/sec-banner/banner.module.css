@@ -503,15 +503,37 @@
 }
 
 
-.boxAlertLoginOn{
+.boxAlertLoginOff{
 
-
+    transform: translateX(-100vw);
+    transition: 800ms linear;
+    
 }
 
 
 .boxAlertLoginOn{
-    
 
+    transform: translateX(0vw);
+    transition: 800ms linear;
+    border-left: 5px solid yellow;
+    background-color: #b18d29;
+}
+
+
+.boxAlertLoginOn2{
+
+    transform: translateX(0vw);
+    transition: 800ms linear;
+    border-left: 5px solid rgb(255, 251, 0);
+    background-color: rgba(219, 46, 46, 0.959);
+}
+
+.boxAlertLoginOn3{
+
+    transform: translateX(0vw);
+    transition: 800ms linear;
+    border-left: 5px solid rgb(255, 251, 0);
+    background-color: rgba(46, 219, 46, 0.959);
 }
 
  

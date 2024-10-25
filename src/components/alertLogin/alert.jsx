@@ -6,16 +6,19 @@ import {faX , faCheck} from '@fortawesome/free-solid-svg-icons'
 
 
 
-export default function AlertMsg(){
+export default function AlertMsg(props){
 
 
     return(
 
-            <section className={estiloAlert.boxAlerta}>
-                    <FontAwesomeIcon className={estiloAlert.icon} icon={faCheck}/>
-                    <p className={estiloAlert.msg}>mensagem</p>
-            </section>
-       
+         
+                    <section className={`${estiloAlert.boxAlerta} ${props.animaLogin}`}>
+                    
+                            <FontAwesomeIcon className={estiloAlert.icon} icon={faCheck}/>
+                            <p className={estiloAlert.msg}>{props.animaMsg}</p>
+                    
+                    </section>
+        
 
     )
 

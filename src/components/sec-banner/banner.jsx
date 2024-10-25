@@ -32,13 +32,37 @@ export default function Banner() {
     
     const [ham, setHam] = useState(faPowerOff)
 
-    const [alertLogin , setAlertLogin] = useState()
-
-
-
+    const [alertLogin , setAlertLogin] = useState(estiloBanner.boxAlertLoginOff)
+    const [alertMsg , setAlertMsg] = useState('')
     
+
     const boxNav = useRef()
 
+
+    function showAlertLogin(msg){
+
+        if(msg === 'Preencha os Campos'){
+
+            setAlertLogin(estiloBanner.boxAlertLoginOn)
+        }else if(msg === 'Login / Senha Incorretas'){
+
+            setAlertLogin(estiloBanner.boxAlertLoginOn2)
+
+        }else if(msg === 'BEM VINDO'){
+
+            setAlertLogin(estiloBanner.boxAlertLoginOn3)
+        }
+
+        setAlertMsg(msg)
+       
+        setTimeout(()=>{
+
+            setAlertLogin(estiloBanner.boxAlertLoginOff)
+
+        },3000)
+
+      
+    }
 
 
     function clickMenuEscondido() {
@@ -251,10 +275,17 @@ export default function Banner() {
 
                     telaLogin={displayLogin}
                     closeLogin={closeTelaLogin}
+                    clickAlert={showAlertLogin}
                 />
 
 
-                <AlertMsg/> 
+                <AlertMsg
+                
+                animaLogin={alertLogin}
+                animaMsg={alertMsg}
+               
+                
+                /> 
 
             </div>
 

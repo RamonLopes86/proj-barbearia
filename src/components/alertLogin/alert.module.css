@@ -1,45 +1,24 @@
-.boxAlerta{
+
+
+
+ .boxAlerta{
 
     width: 300px;
-    border-left: 5px solid yellow;
-    background-color: rgba(46, 219, 190, 0.849);
     position: absolute;
     left: 10px;
-    bottom: -860px;    
+    /* bottom: -860px;     */
+    top: 80vh;
     padding: 20px;
-    transform: translateX(0vw);
     transition: 1s;
     z-index: 1;
     display: flex;
     flex-direction: row;
     gap:10px;
     align-items: center;
-
-    
-    
 }
 
-.boxAlerta::after{
+   
 
-    content: '';
-    display: block;
-    
-    height: 4px;
-     background-color: red;
-     position: absolute;
-     left: 0;
-     width: 100%;
-     bottom: 0px;
-     transition: 800ms;
-
-    animation-name: move;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
-     animation-timing-function: linear;
-
-} 
-    
 
 .icon{
 
@@ -49,18 +28,21 @@
 
 
 
-@keyframes move {
 
-    from {
+@media screen and (max-width:960px) {
 
-      width: 100%;
+    .boxAlerta{
+
+        width: 60vw;
+        top: 20%;
     }
-
-    from{
-       width: 0%;
-    }
+       
 
 }
+
+
+
+
 
 
     

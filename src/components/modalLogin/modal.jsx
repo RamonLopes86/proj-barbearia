@@ -67,18 +67,25 @@ export default function ModalLogin(props){
             
              if(response.data.length === 1){
 
+                props.clickAlert('BEM VINDO')
 
-                router.push('./pagelogado')
+                 setTimeout(()=>{
+
+                    router.push('./pagelogado')
+
+                 },1450)
+
 
             }else if(response.data.msg === 'preencha os campos'){
 
                 
-                alert('preencha os campos')
+                props.clickAlert('Preencha os Campos')
+                
 
             }else if(response.data.msg === 'senha incorreta'){
 
 
-                alert('senha incorreta')
+                props.clickAlert('Login / Senha Incorretas')
             }
 
         
