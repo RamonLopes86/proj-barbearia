@@ -29,9 +29,12 @@ export default function Banner() {
     const [displayLogin, setDisplayLogin] = useState(estiloBanner.displayOff)
 
     const [cond , setCond] = useState(false)
-  
-
+    
     const [ham, setHam] = useState(faPowerOff)
+
+    const [alertLogin , setAlertLogin] = useState()
+
+
 
     
     const boxNav = useRef()

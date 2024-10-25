@@ -12,15 +12,14 @@ import { useRouter } from 'next/navigation';
 
 
 
-
- 
-
 export default function ModalLogin(props){
 
   
     
     const [TxinputLogin , setTxInputLogin] = useState('')
     const [senha , setSenha] = useState('')
+
+ 
 
     const urlLogar = 'http://localhost:8000/logar'
 
@@ -73,8 +72,9 @@ export default function ModalLogin(props){
 
             }else if(response.data.msg === 'preencha os campos'){
 
-                alert('preencha os campos')
                 
+                alert('preencha os campos')
+
             }else if(response.data.msg === 'senha incorreta'){
 
 
@@ -144,7 +144,7 @@ export default function ModalLogin(props){
                 </section>
 
                
-
+                
 
             </section>
        
