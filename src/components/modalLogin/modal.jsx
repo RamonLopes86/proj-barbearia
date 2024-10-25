@@ -55,31 +55,7 @@ export default function ModalLogin(props){
         }
         
         
-        
-
-       
-
-           
-
-       
-           
-              
-        if(TxinputLogin.length === 0 || senha.length === 0){
-
-            
-            alert('preencha os campos')
-             
-              
-        }
-
-            
-
-        
-        const response = await axios.post(urlLogar , vl)
-
-        console.log(response.data)
     
-
         try {
 
             // trecho de codigo com potencial para falhar
@@ -91,13 +67,14 @@ export default function ModalLogin(props){
 
                 router.push('./pagelogado')
 
-            }else{
-                alert('senha inco')
+            }else if(response.data.msg === 'preencha os campos'){
+                alert('preencha os campos')
+            }else if(response.data.msg === 'senha incorreta'){
+
+                alert('senha incorreta')
             }
 
-            
-           
-
+        
 
         } catch (error) {
 

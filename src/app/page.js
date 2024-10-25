@@ -21,11 +21,11 @@ export default function Home() {
             <Time/>
             <Rodape/>
         
+        </main>
 
 
             
      
 
-        </main>
   );
 }
