@@ -14,7 +14,7 @@ export default function AlertMsg(props){
          
                     <section className={`${estiloAlert.boxAlerta} ${props.animaLogin}`}>
                     
-                            <FontAwesomeIcon className={estiloAlert.icon} icon={faCheck}/>
+                            <FontAwesomeIcon className={estiloAlert.icon} icon={props.icon}/>
                             <p className={estiloAlert.msg}>{props.animaMsg}</p>
                     
                     </section>

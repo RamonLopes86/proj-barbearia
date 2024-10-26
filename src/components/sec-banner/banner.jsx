@@ -10,6 +10,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import {faX , faCheck} from '@fortawesome/free-solid-svg-icons'
 import wpp from '../../../public/wpp.png';
 import face from '../../../public/facebook.png';
 import insta from '../../../public/instagram.png';
@@ -34,6 +35,7 @@ export default function Banner() {
 
     const [alertLogin , setAlertLogin] = useState(estiloBanner.boxAlertLoginOff)
     const [alertMsg , setAlertMsg] = useState('')
+    const [useIcon , setUseIcon] = useState(null)
     
 
     const boxNav = useRef()
@@ -44,13 +46,15 @@ export default function Banner() {
         if(msg === 'Preencha os Campos'){
 
             setAlertLogin(estiloBanner.boxAlertLoginOn)
+            setUseIcon(faX)
         }else if(msg === 'Login / Senha Incorretas'){
 
             setAlertLogin(estiloBanner.boxAlertLoginOn2)
-
+            setUseIcon(faX)
         }else if(msg === 'BEM VINDO'){
 
             setAlertLogin(estiloBanner.boxAlertLoginOn3)
+            setUseIcon(faCheck)
         }
 
         setAlertMsg(msg)
@@ -283,6 +287,7 @@ export default function Banner() {
                 
                 animaLogin={alertLogin}
                 animaMsg={alertMsg}
+                icon={useIcon}
                
                 
                 /> 
