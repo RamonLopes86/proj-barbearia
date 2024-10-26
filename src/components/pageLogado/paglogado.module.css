@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
+   
     
 }
 
@@ -264,6 +264,276 @@
 
 }
 
+
+
+/* modal clientes */
+
+.boxModalClientes {
+
+
+  position: absolute;
+  background-color: #d6a00b;
+  padding: 40px 20px;
+  border-radius: 8px;
+  max-width: 1024px;
+  height: 500px;
+  overflow-Y: scroll;
+
+}
+
+
+.boxModalClientes .boxInput {
+
+  text-align: center;
+  max-width: 800px;
+  margin: 0px  auto;
+  padding: 20px 10px 40px  10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  
+}
+
+
+.boxModalClientes .boxInput h1 {
+
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #0B2438;
+
+}
+
+.boxModalClientes .boxInput input {
+
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid #0B2438; 
+}
+   
+
+.boxModalClientes .boxPaiModalClientes{
+
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-evenly;
+ gap: 30px 0px;
+ flex-wrap: wrap;
+ 
+}
+
+.boxModalClientes  .boxClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+ 
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+ 
+.boxModalClientes  .boxClose .iconX{
+
+    color: red;
+
+}
+ 
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura{
+
+    width: 250px;
+    height: fit-content;
+    border-left: 5px solid #0B2438;
+    background-color: white;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(3 , 1fr);
+    grid-gap: 10px;
+    transition: 400ms;
+    
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura div{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-start;
+
+}
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura:hover{
+
+   transform: translateY(-8px);
+   transition: 400ms;
+   border-left: 5px solid green;
+
+}
+
+    
+
+
+.modalAnimaOn{
+
+  transform: scale(1);
+  opacity: 1;
+ transition:600ms;
+  
+}
+
+
+.modalAnimaOff{
+
+  
+  transform: scale(0);
+  transition: 600ms;
+  opacity: 0;
+}
+ 
+
+
+/* cadastrar clientes */
+
+.boxPai .boxCadastrarClientes{
+
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+   justify-content: center;
+    position: absolute;
+    width: 100%;
+  }
+    
+
+
+  .boxPai .boxCadastrarClientes .boxFormulario{
+
+      width: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background-color: #FED45C;
+      padding: 20px 10px;
+      border-radius: 8px;
+      position: relative;
+      
+  }
+
+  
+  .boxPai .boxCadastrarClientes .boxFormulario .iconFechar{
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 10px;
+    right: 10px;
+    background-color: #0B2438;
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+    
+}
+      
+
+
+  .boxPai .boxCadastrarClientes .boxFormulario form{
+
+    min-width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content:space-evenly;
+    padding: 0px 20px;
+    
+    
+    
+  }
+
+  .boxPai .boxCadastrarClientes .boxFormulario h1{
+
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: #0B2438;
+      width: 100%;
+      text-align: center;
+    
+  }
+
+
+
+.boxPai .boxCadastrarClientes .boxFormulario form div{
+
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  width: 100%;
+  
+
+}
+
+.boxPai .boxCadastrarClientes .boxFormulario form div input{
+
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border: 2px solid #0B2438; 
+
+}
+
+
+.boxPai .boxCadastrarClientes .boxFormulario form .boxBotaoCadastro {
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  
+}
+
+
+.boxPai .boxCadastrarClientes .boxFormulario form div button{
+
+  width: 200px;
+  padding: 15px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #0B2438;
+  color: white;
+  position: relative;
+  
+  box-shadow: 0px 6px 5px rgb(2, 2, 2);
+ 
+}
+
+
+.boxPai .boxCadastrarClientes .boxFormulario form div button:active{
+
+      transform: translateY(2px);
+      box-shadow: 0px 2px 5px black;
+      transition: 250ms;
+}
+  
 
 
 @media screen and (max-width:460px) {

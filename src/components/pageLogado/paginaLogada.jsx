@@ -4,10 +4,11 @@ import estiloPglogado from './paglogado.module.css'
 import Image from "next/image"
 import banner from '../../../public/bg-image.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPersonRunning , faDoorOpen } from '@fortawesome/free-solid-svg-icons'
+import { faPersonRunning , faDoorOpen , faX } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../../../public/penteado.png'
 import React , {useState , useRef , useEffect} from 'react'
 import { useRouter } from 'next/navigation'
+import axios from 'axios'
 
 
 
@@ -17,10 +18,20 @@ export default function PaginaLogada(){
     const [animaLogon , setAnimaLogon] = useState(null)
     const [modalExit , setModalExit] = useState(3)
     const [modalAnima, setModalAnima] = useState(estiloPglogado.numerAnimaOff)
+    const[modalClientes , setMOdalClientes] = useState([])
+    const [animaModal , setAnimaModal] = useState(estiloPglogado.modalAnimaOff)
+    const [modalCadastro , setModalCadastro] = useState(estiloPglogado.modalAnimaOff)
+
+
+    const[inputNome , setInputNome] = useState('')
+    const[inputEnd , setInputEnd] = useState('')
+    const[inputTel , setInputTel] = useState('')
+
 
     const router = useRouter()
 
-
+    const utlGet = 'http://localhost:8000/exibir'
+    const urlPost = 'http://localhost:8000/cadastrar'
     
 
     function clickLogon(){
@@ -60,7 +71,96 @@ export default function PaginaLogada(){
         
 
     }
+      
+    
+    async function exibir(ev){
+
+    ev.preventDefault()
+
+
+        try {
+        
+            const response = await axios.get(utlGet)
+
+            setMOdalClientes(response.data)
+            console.log(response.data)
+
+            setAnimaModal(estiloPglogado.modalAnimaOn)
+
+
+        } catch (error) {
+
+            console.log(error.status)
+
+        }
+
+
+    }
+
+
+    function closeModalClientes(){
+
+    setAnimaModal(estiloPglogado.modalAnimaOff)
+
+    }
+
+
+    function openModalCadastrarClientes(nome){
+
+    
+        if(nome === 'xis'){
+
+            setModalCadastro(estiloPglogado.modalAnimaOff)
+        }else if(nome === 'cad'){
+
+            setModalCadastro(estiloPglogado.modalAnimaOn)
+        }
        
+    }
+
+
+    
+    async function cadastrarClientes(ev){
+
+        ev.preventDefault()
+
+        const vl = {
+
+        nome:inputNome,
+        end:inputEnd,
+        tel:inputTel
+
+
+        }
+
+
+        try {
+
+            const response = await axios.post(urlPost , vl)
+
+            if(response.data === 'not'){
+
+                alert('prrencha os campos')
+            }else{
+
+                 await axios.post(urlPost , vl)
+                 alert('enviado com sucesso')
+
+            }
+
+            
+
+
+        } catch (error) {
+
+            console.log(error.status)
+        }
+
+
+    }
+
+
+  
 
    
     
@@ -113,10 +213,10 @@ export default function PaginaLogada(){
 
                         <div className={estiloPglogado.boxBotoes}>
 
-                            <button>clientes</button>
+                            <button onClick={exibir}>clientes</button>
                             <button>Tabela de preços</button>
                             <button>Faturamento</button>
-                            <button>cadastrar clientes</button>
+                            <button onClick={()=> openModalCadastrarClientes('cad')}>cadastrar clientes</button>
                             <button>funcionarios</button>
                             <button>comanda</button>
 
@@ -134,6 +234,105 @@ export default function PaginaLogada(){
 
                         <p>{modalExit}</p>
                  
+            </section>
+
+
+            <section className={`${estiloPglogado.boxModalClientes} ${animaModal}`}>
+
+                <div className={estiloPglogado.boxInput}>
+                    
+                    <h1>pesquise o cliente</h1>
+                    <input type="text" name="busca" id="idbusca" autoComplete='off' />
+                    
+                </div>
+
+                <div onClick={closeModalClientes} className={estiloPglogado.boxClose}>
+
+                        <FontAwesomeIcon className={estiloPglogado.iconX} icon={faX}/>
+                </div>
+
+                <div className={estiloPglogado.boxPaiModalClientes}>
+
+                        {
+
+                            modalClientes.map((modalClientes)=>
+                            
+                               <div className={estiloPglogado.boxMoldura} key={modalClientes.id}>
+
+                                    <div>
+                                    <h1>Nome:</h1>
+                                    <p>{modalClientes.nome}</p>
+                                     
+                                    </div>
+                                    <div>
+                                    <h1>End:</h1>
+                                    <p>{modalClientes.endereco}</p>
+                                    
+                                    </div>
+
+                                    <div>
+                                        <h1>Tel:</h1>
+                                        <p>{modalClientes.telefone}</p>
+                                    </div>
+
+                               </div>
+                            )
+
+                        }
+                    
+                </div>  
+
+            </section>
+
+
+            <section className={`${estiloPglogado.boxCadastrarClientes} ${modalCadastro} `} >
+
+
+                        <div className={`${estiloPglogado.boxFormulario} `}>
+
+                               <FontAwesomeIcon onClick={()=>openModalCadastrarClientes('xis')} className={estiloPglogado.iconFechar} icon={faX}/>
+
+                                <h1>Cadastrar Cliente</h1>
+
+                                <form action="#">
+
+                                   <div className={estiloPglogado.boxNome}>
+
+                                    <label htmlFor="idnome">Nome</label>
+
+                                   <input onChange={(ev)=> setInputNome(ev.target.value)} value={inputNome} autoComplete='off' type="text" name="nome" id="idnome" />
+
+                                   </div>
+
+                                   <div className={estiloPglogado.boxEndereco}>
+
+                                    <label htmlFor="idendereco">Endereço</label>
+                                   <input onChange={(ev)=> setInputEnd(ev.target.value)} value={inputEnd} autoComplete='off' type="text" name="endereo" id="idendereco" />
+
+                                   </div>
+
+                                   <div className={estiloPglogado.boxTelefone}>
+
+                                    <label htmlFor="idtel">Telefone</label>
+                                    <input onChange={(ev)=> setInputTel(ev.target.value)} value={inputTel} type="tel" name="tel" id="idtel" />
+
+                                   </div>
+
+
+                                   <div className={estiloPglogado.boxBotaoCadastro}>
+
+                                   <button onClick={cadastrarClientes}>cadastrar</button>
+
+                                   </div>
+
+                                </form>
+
+                              
+
+                        </div>
+
+
+
             </section>
 
                 
