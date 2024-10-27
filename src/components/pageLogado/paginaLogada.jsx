@@ -37,8 +37,12 @@ export default function PaginaLogada(){
 
     const router = useRouter()
 
+    
+
     const utlGet = 'http://localhost:8000/exibir'
     const urlPost = 'http://localhost:8000/cadastrar'
+    
+
     
 
     function clickLogon(){
@@ -80,9 +84,7 @@ export default function PaginaLogada(){
     }
       
     
-    async function exibir(ev){
-
-    ev.preventDefault()
+    async function exibir(){
 
 
         try {
@@ -114,6 +116,15 @@ export default function PaginaLogada(){
 
     function openModalCadastrarClientes(nome){
 
+        setAnimaInputEnd(estiloPglogado.inputAnimaOff)
+        setAnimaInputTel(estiloPglogado.inputAnimaOff)
+        setAnimaInputNome(estiloPglogado.inputAnimaOff)
+        
+        setInputNome('')
+        setInputEnd('')
+        setInputTel('')
+
+        setMsg('')
     
         if(nome === 'xis'){
 
@@ -123,6 +134,20 @@ export default function PaginaLogada(){
             setModalCadastro(estiloPglogado.modalAnimaOn)
         }
        
+    }
+
+
+    function limparInputs(){
+        
+        setInputNome('')
+        setInputEnd('')
+        setInputTel('')
+
+        setAnimaInputEnd(estiloPglogado.inputAnimaOff)
+        setAnimaInputTel(estiloPglogado.inputAnimaOff)
+        setAnimaInputNome(estiloPglogado.inputAnimaOff)
+
+
     }
 
 
@@ -142,6 +167,7 @@ export default function PaginaLogada(){
         if(inputTel.length > 0){
 
             setAnimaInputTel(estiloPglogado.inputAnimaOff)
+            setMsg('')
         }
 
         
@@ -172,62 +198,81 @@ export default function PaginaLogada(){
 
             console.log(response.data)
 
-            
+            if(response.data.msg === 'precampo'){
 
-            if(response.data === 'not'){
+                setMsg('Preencha os Campos')
 
-                   
+                if(!inputNome){
 
-               
-
-                    if(!inputNome){
-
-                        setAnimaInputNome(estiloPglogado.inputAnimaOn)
-                        setMsg('preencha os campos')
-                    }
-                        
-                    if(!inputEnd){
-            
-                        setAnimaInputEnd(estiloPglogado.inputAnimaOn)
-                        setMsg('preencha os campos')
-                    }
-                    if(!inputTel){
-            
-                        setAnimaInputTel(estiloPglogado.inputAnimaOn)
-                        setMsg('preencha os campos')
-                    }
-
-                   
-                   
+                    setAnimaInputNome(estiloPglogado.inputAnimaOn)
                 }
-                if(!/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)(?:(9\d{4})-(\d{4})|([2-9]\d{3})-(\d{4}))$/.test(inputTel)){
+                if(!inputEnd){
 
+                    setAnimaInputEnd(estiloPglogado.inputAnimaOn)
+                }
+                if(!inputTel){
 
-                setMsg('numero invalido')
+                    setAnimaInputTel(estiloPglogado.inputAnimaOn)
+                }
+            }
 
-            }else{
+            if(response.data.msg === 'numinvalido'){
 
-                setMsg('enviado com suiceso')
-            }  
+                  setMsg('Numero Inválido')
+                setAnimaInputTel(estiloPglogado.inputAnimaOn)
+            }
+            
+            if(response.data.affectedRows === 1){
 
-        
+                setMsg('cadastro realizado com sucesso')
+              
 
+                setAnimaInputEnd(estiloPglogado.inputAnimaOff)
+                setAnimaInputTel(estiloPglogado.inputAnimaOff)
+                setAnimaInputNome(estiloPglogado.inputAnimaOff)
+
+                setInputEnd('')
+                setInputNome('')
+                setInputTel('')
+
+                setTimeout(()=>{
+
+                    setMsg('')
+                },1200)
+
+            }
+              
 
         } catch (error) {
 
             console.log(error.status)
         }
         
+    }
             
 
 
+   async function deletarCliente(id){
+
+            try {
+                
+               const response = await axios.delete( `http://localhost:8000/excluir/${id}`)
+
+                if(response.status === 200){
+
+                    return exibir()
+                }
+
+            } catch (error) {
+
+                console.log(error.message)
+
+            }
+
+
     }
+        
 
-
-  
-
-   
-    
     
 
     return(
@@ -324,6 +369,7 @@ export default function PaginaLogada(){
                                <div className={estiloPglogado.boxMoldura} key={modalClientes.id}>
 
                                     <div>
+                                    <button onClick={()=> deletarCliente(modalClientes.id)} className={estiloPglogado.btnDel}>DEL</button>
                                     <h1>Nome:</h1>
                                     <p>{modalClientes.nome}</p>
                                      
@@ -364,21 +410,21 @@ export default function PaginaLogada(){
 
                                     <label htmlFor="idnome">Nome</label>
 
-                                   <input className={animaInputNome} onChange={(ev)=> setInputNome(ev.target.value)} value={inputNome} autoComplete='off' type="text" name="nome" id="idnome" />
+                                   <input placeholder='Nome Completo' className={animaInputNome} onChange={(ev)=> setInputNome(ev.target.value)} value={inputNome} autoComplete='off' type="text" name="nome" id="idnome" />
 
                                    </div>
 
                                    <div className={estiloPglogado.boxEndereco}>
 
                                     <label htmlFor="idendereco">Endereço</label>
-                                   <input className={animaInputEnd} onChange={(ev)=> setInputEnd(ev.target.value)} value={inputEnd} autoComplete='off' type="text" name="endereo" id="idendereco" />
+                                   <input placeholder='endereço completo' className={animaInputEnd} onChange={(ev)=> setInputEnd(ev.target.value)} value={inputEnd} autoComplete='off' type="text" name="endereo" id="idendereco" />
 
                                    </div>
 
                                    <div className={estiloPglogado.boxTelefone}>
 
                                     <label htmlFor="idtel">Telefone</label>
-                                    <input className={animaInputTel} onChange={(ev)=> setInputTel(ev.target.value)} value={inputTel} type="tel" name="tel" id="idtel" />
+                                    <input placeholder='(XX)XXXXX-XXXX' className={animaInputTel} onChange={(ev)=> setInputTel(ev.target.value)} value={inputTel} type="tel" name="tel" id="idtel" />
 
                                    </div>
 
@@ -389,6 +435,8 @@ export default function PaginaLogada(){
                                    <div className={estiloPglogado.boxBotaoCadastro}>
 
                                    <button onClick={cadastrarClientes}>cadastrar</button>
+
+                                   <button onClick={limparInputs}>Limpar</button>
 
                                    </div>
 

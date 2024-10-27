@@ -275,9 +275,10 @@
   background-color: #d6a00b;
   padding: 40px 20px;
   border-radius: 8px;
-  max-width: 1024px;
-  height: 500px;
+  max-width: 1200px;
+  height: 600px;
   overflow-Y: scroll;
+  
 
 }
 
@@ -320,7 +321,7 @@
  flex-direction: row;
  align-items: center;
  justify-content: space-evenly;
- gap: 30px 0px;
+ gap: 30px 10px;
  flex-wrap: wrap;
  
 }
@@ -353,8 +354,8 @@
 
 .boxModalClientes .boxPaiModalClientes .boxMoldura{
 
-    width: 250px;
-    height: fit-content;
+ 
+    min-height: 250px;
     border-left: 5px solid #0B2438;
     background-color: white;
     padding: 10px;
@@ -362,8 +363,39 @@
     grid-template-rows: repeat(3 , 1fr);
     grid-gap: 10px;
     transition: 400ms;
-    
+    position: relative;
+    overflow: hidden;
+    flex-basis: 450px;
+    flex-grow:1;
 }
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .btnDel{
+
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px;
+  background-color: rgba(255, 51, 0, 0.795);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  transition: 800ms;
+
+  transform: translateY(100px);
+
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .btnDel:hover{
+
+
+  background-color: rgb(255, 0, 0);
+  transition: 800ms;
+  
+}
+
+    
 
 .boxModalClientes .boxPaiModalClientes .boxMoldura div{
 
@@ -381,6 +413,13 @@
    transform: translateY(-8px);
    transition: 400ms;
    border-left: 5px solid green;
+
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura:hover .btnDel{
+
+  transform: translateY(0);
+  transition: 800ms;
 
 }
 
@@ -523,8 +562,22 @@
   
 }
 
+.boxPai .boxCadastrarClientes .boxFormulario form .boxBotaoCadastro button:nth-last-of-type(1){
 
-.boxPai .boxCadastrarClientes .boxFormulario form div button{
+  width: 200px;
+  padding: 15px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #a52f2f;
+  color: white;
+  position: relative;
+  
+  box-shadow: 0px 6px 5px rgb(2, 2, 2);
+ 
+}
+
+.boxPai .boxCadastrarClientes .boxFormulario form .boxBotaoCadastro button:nth-last-of-type(2){
 
   width: 200px;
   padding: 15px;
