@@ -27,6 +27,13 @@ export default function PaginaLogada(){
     const[inputEnd , setInputEnd] = useState('')
     const[inputTel , setInputTel] = useState('')
 
+    const [msg , setMsg] = useState(null)
+
+
+    const [animaInputNome , setAnimaInputNome] = useState(null)
+    const [animaInputEnd , setAnimaInputEnd] = useState(null)
+    const [animaInputTel , setAnimaInputTel] = useState(null)
+
 
     const router = useRouter()
 
@@ -120,6 +127,31 @@ export default function PaginaLogada(){
 
 
     
+
+    useEffect(()=>{
+
+        if(inputNome.length>0){
+
+            setAnimaInputNome(estiloPglogado.inputAnimaOff)
+        }
+            
+        if(inputEnd.length >0){
+
+            setAnimaInputEnd(estiloPglogado.inputAnimaOff)
+        }
+        if(inputTel.length > 0){
+
+            setAnimaInputTel(estiloPglogado.inputAnimaOff)
+        }
+
+        
+
+    },[inputNome , inputEnd , inputTel])
+
+
+   
+
+    
     async function cadastrarClientes(ev){
 
         ev.preventDefault()
@@ -138,23 +170,55 @@ export default function PaginaLogada(){
 
             const response = await axios.post(urlPost , vl)
 
-            if(response.data === 'not'){
-
-                alert('prrencha os campos')
-            }else{
-
-                 await axios.post(urlPost , vl)
-                 alert('enviado com sucesso')
-
-            }
+            console.log(response.data)
 
             
+
+            if(response.data === 'not'){
+
+                   
+
+               
+
+                    if(!inputNome){
+
+                        setAnimaInputNome(estiloPglogado.inputAnimaOn)
+                        setMsg('preencha os campos')
+                    }
+                        
+                    if(!inputEnd){
+            
+                        setAnimaInputEnd(estiloPglogado.inputAnimaOn)
+                        setMsg('preencha os campos')
+                    }
+                    if(!inputTel){
+            
+                        setAnimaInputTel(estiloPglogado.inputAnimaOn)
+                        setMsg('preencha os campos')
+                    }
+
+                   
+                   
+                }
+                if(!/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)(?:(9\d{4})-(\d{4})|([2-9]\d{3})-(\d{4}))$/.test(inputTel)){
+
+
+                setMsg('numero invalido')
+
+            }else{
+
+                setMsg('enviado com suiceso')
+            }  
+
+        
 
 
         } catch (error) {
 
             console.log(error.status)
         }
+        
+            
 
 
     }
@@ -300,24 +364,27 @@ export default function PaginaLogada(){
 
                                     <label htmlFor="idnome">Nome</label>
 
-                                   <input onChange={(ev)=> setInputNome(ev.target.value)} value={inputNome} autoComplete='off' type="text" name="nome" id="idnome" />
+                                   <input className={animaInputNome} onChange={(ev)=> setInputNome(ev.target.value)} value={inputNome} autoComplete='off' type="text" name="nome" id="idnome" />
 
                                    </div>
 
                                    <div className={estiloPglogado.boxEndereco}>
 
                                     <label htmlFor="idendereco">Endereço</label>
-                                   <input onChange={(ev)=> setInputEnd(ev.target.value)} value={inputEnd} autoComplete='off' type="text" name="endereo" id="idendereco" />
+                                   <input className={animaInputEnd} onChange={(ev)=> setInputEnd(ev.target.value)} value={inputEnd} autoComplete='off' type="text" name="endereo" id="idendereco" />
 
                                    </div>
 
                                    <div className={estiloPglogado.boxTelefone}>
 
                                     <label htmlFor="idtel">Telefone</label>
-                                    <input onChange={(ev)=> setInputTel(ev.target.value)} value={inputTel} type="tel" name="tel" id="idtel" />
+                                    <input className={animaInputTel} onChange={(ev)=> setInputTel(ev.target.value)} value={inputTel} type="tel" name="tel" id="idtel" />
 
                                    </div>
 
+                                    <div className={estiloPglogado.boxMsg}>
+                                        <p>{msg}</p>
+                                    </div>
 
                                    <div className={estiloPglogado.boxBotaoCadastro}>
 
