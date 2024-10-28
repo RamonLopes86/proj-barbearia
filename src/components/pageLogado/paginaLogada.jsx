@@ -21,6 +21,7 @@ export default function PaginaLogada(){
     const[modalClientes , setMOdalClientes] = useState([])
     const [animaModal , setAnimaModal] = useState(estiloPglogado.modalAnimaOff)
     const [modalCadastro , setModalCadastro] = useState(estiloPglogado.modalAnimaOff)
+    const [inputPesq , setInputPesq] = useState('')
 
 
     const[inputNome , setInputNome] = useState('')
@@ -137,7 +138,9 @@ export default function PaginaLogada(){
     }
 
 
-    function limparInputs(){
+    function limparInputs(ev){
+
+        ev.preventDefault()
         
         setInputNome('')
         setInputEnd('')
@@ -273,6 +276,37 @@ export default function PaginaLogada(){
     }
         
 
+    function pesquisarCliente(tx){
+
+      let filtrado = modalClientes.filter((modalClientes)=>
+    
+    
+        modalClientes.nome.toLowerCase().includes(tx.toLowerCase())||
+        modalClientes.endereco.toLowerCase().includes(tx.toLowerCase())||
+        modalClientes.telefone.toLowerCase().includes(tx.toLowerCase())
+    )
+
+
+       
+    setInputPesq(setMOdalClientes(filtrado))
+        
+       
+        if(tx.length === 0){
+
+            return exibir()
+        }
+
+        if(filtrado.length === 0){
+
+            alert('nao foi encontrado')
+        }
+
+
+    }
+
+
+
+    
     
 
     return(
@@ -351,7 +385,7 @@ export default function PaginaLogada(){
                 <div className={estiloPglogado.boxInput}>
                     
                     <h1>pesquise o cliente</h1>
-                    <input type="text" name="busca" id="idbusca" autoComplete='off' />
+                    <input onChange={(ev)=> pesquisarCliente(ev.target.value) } value={inputPesq} type="text" name="busca" id="idbusca" autoComplete='off' />
                     
                 </div>
 
