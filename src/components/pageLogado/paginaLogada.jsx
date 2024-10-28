@@ -19,9 +19,14 @@ export default function PaginaLogada(){
     const [modalExit , setModalExit] = useState(3)
     const [modalAnima, setModalAnima] = useState(estiloPglogado.numerAnimaOff)
     const[modalClientes , setMOdalClientes] = useState([])
+    const [clientesFiltrados , setClientesFiltrados] = useState([])
     const [animaModal , setAnimaModal] = useState(estiloPglogado.modalAnimaOff)
     const [modalCadastro , setModalCadastro] = useState(estiloPglogado.modalAnimaOff)
     const [inputPesq , setInputPesq] = useState('')
+    const [btnDel , setBtnDel] = useState(estiloPglogado.btnDel)
+    const [clienteId , setClienteId]=useState(null)
+    
+
 
 
     const[inputNome , setInputNome] = useState('')
@@ -29,6 +34,10 @@ export default function PaginaLogada(){
     const[inputTel , setInputTel] = useState('')
 
     const [msg , setMsg] = useState(null)
+
+    const [cond , setCond] = useState(false)
+
+
 
 
     const [animaInputNome , setAnimaInputNome] = useState(null)
@@ -93,7 +102,7 @@ export default function PaginaLogada(){
             const response = await axios.get(utlGet)
 
             setMOdalClientes(response.data)
-            console.log(response.data)
+            setClientesFiltrados(response.data)
 
             setAnimaModal(estiloPglogado.modalAnimaOn)
 
@@ -111,6 +120,8 @@ export default function PaginaLogada(){
     function closeModalClientes(){
 
     setAnimaModal(estiloPglogado.modalAnimaOff)
+    setCond(false)
+    setInputPesq('')
 
     }
 
@@ -262,9 +273,13 @@ export default function PaginaLogada(){
                const response = await axios.delete( `http://localhost:8000/excluir/${id}`)
 
                 if(response.status === 200){
-
-                    return exibir()
+                     
+                   
+                        return exibir()
+                  
                 }
+
+                
 
             } catch (error) {
 
@@ -274,7 +289,36 @@ export default function PaginaLogada(){
 
 
     }
-        
+
+
+    function alertDeletarCliente(param , id){
+
+        setClienteId(id)    
+
+        if(param === 'del'){
+
+           
+            
+            setBtnDel(estiloPglogado.btnDelOff)
+           
+           
+            
+        }
+
+          
+        if(param === 'nao'){
+
+            
+            
+             setBtnDel(estiloPglogado.btnDel)
+            
+        }
+            
+    }
+
+       
+
+
 
     function pesquisarCliente(tx){
 
@@ -287,26 +331,36 @@ export default function PaginaLogada(){
     )
 
 
-       
-    setInputPesq(setMOdalClientes(filtrado))
-        
-       
-        if(tx.length === 0){
-
-            return exibir()
-        }
-
-        if(filtrado.length === 0){
-
-            alert('nao foi encontrado')
-        }
-
-
-    }
-
-
 
     
+    setInputPesq(setClientesFiltrados(filtrado))
+    
+
+   
+
+    if(filtrado.length === 0){
+
+         setCond(true)
+    }
+
+    if(filtrado.length > 0){
+
+        setCond(false)
+    }
+    
+    if(tx.length === 0){
+
+        
+        exibir()
+      
+        setCond(false)
+        
+    }
+  
+        
+    }
+        
+            
     
 
     return(
@@ -398,12 +452,12 @@ export default function PaginaLogada(){
 
                         {
 
-                            modalClientes.map((modalClientes)=>
+                            clientesFiltrados.map((modalClientes)=>
                             
                                <div className={estiloPglogado.boxMoldura} key={modalClientes.id}>
 
                                     <div>
-                                    <button onClick={()=> deletarCliente(modalClientes.id)} className={estiloPglogado.btnDel}>DEL</button>
+                                    <button onClick={()=>alertDeletarCliente('del' , modalClientes.id)} className={btnDel}>DEL</button>
                                     <h1>Nome:</h1>
                                     <p>{modalClientes.nome}</p>
                                      
@@ -419,12 +473,28 @@ export default function PaginaLogada(){
                                         <p>{modalClientes.telefone}</p>
                                     </div>
 
+                                    <div className={`${estiloPglogado.alertMoldura} ${clienteId === modalClientes.id ? estiloPglogado.alertMoldOn : estiloPglogado.alertMoldOff}`}  >
+
+                                        <p>Tem certeza que deseja deletar :  {modalClientes.nome}</p>
+
+                                        <div className={`${estiloPglogado.boxMolduraBtb}`}>
+                                            <button onClick={()=> deletarCliente(modalClientes.id)}>sim</button>
+                                            <button onClick={()=>alertDeletarCliente('nao')}>nao</button>
+                                        </div>
+                                    </div>
+
                                </div>
                             )
 
                         }
                     
                 </div>  
+
+                <div className={`${estiloPglogado.boxNaoEncontrado} ${cond ? estiloPglogado.animaAlertOn : estiloPglogado.animaAlertOff}`}>
+
+                    <p>cliente não encontrado</p>
+
+                </div>
 
             </section>
 

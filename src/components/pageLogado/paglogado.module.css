@@ -215,7 +215,7 @@
   position: absolute;
   top: 50px;
   left: 45%;
-
+  
   transition: 1s;
   font-size: 3rem;
   text-align: center;
@@ -274,13 +274,59 @@
   position: absolute;
   background-color: #d6a00b;
   padding: 40px 20px;
-  border-radius: 8px;
+  border-radius:10px;
   max-width: 1200px;
   height: 600px;
   overflow-Y: scroll;
   
 
 }
+
+.boxModalClientes .boxNaoEncontrado{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   background-color: red;
+   padding: 10px;
+    width: 80%;
+    margin: 0px auto;
+   color: white;
+   text-transform: uppercase;
+}
+
+
+
+
+.animaAlertOn{
+  
+  opacity: 1;
+  filter: blur(0);
+  transition: 1s;
+}
+
+.animaAlertOff{
+
+ 
+  visibility: hidden;
+  filter: blur(5px);
+  transition: none;
+
+}
+  
+
+  
+
+  
+
+  
+
+
 
 
 .boxModalClientes .boxInput {
@@ -365,9 +411,76 @@
     transition: 400ms;
     position: relative;
     overflow: hidden;
-    flex-basis: 450px;
-    flex-grow:1;
+    flex-basis: 350px;
+    
+
 }
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura{
+
+ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50% , -50%); */
+    background-color: rgb(187, 59, 59);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    color: white;
+    width: 50%;
+    
+
+    animation-name: move;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite
+
+}
+
+.alertMoldOn{
+
+    transform: translate(-50% , -50%);
+    transition: 800ms;
+}
+
+.alertMoldOff{
+
+  transform: translate(-250% , -50%);
+  transition:800ms;
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura .boxMolduraBtb{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura .boxMolduraBtb button{
+
+  width: 100%;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+ 
+  
+}
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura p{
+
+    text-wrap:wrap;
+    text-align: center;
+    min-height: 50px;
+    font-size: 0.9rem;
+
+  }
+  
+
+
 
 .boxModalClientes .boxPaiModalClientes .boxMoldura .btnDel{
 
@@ -382,10 +495,19 @@
   border-radius: 4px;
   font-size: 0.7rem;
   transition: 800ms;
-
+  opacity: 1;
   transform: translateY(100px);
-
 }
+
+.btnDelOff{
+
+ opacity: 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px;
+}
+
 
 .boxModalClientes .boxPaiModalClientes .boxMoldura .btnDel:hover{
 
@@ -676,6 +798,21 @@
      
       left: 5px;
    
+    }
+
+}
+
+
+@keyframes move {
+
+    
+
+    to{
+
+        box-shadow: 0px 0px 10px red , 0px 0px 25px red;
+
+        transition: 1s;
+
     }
 
 }
