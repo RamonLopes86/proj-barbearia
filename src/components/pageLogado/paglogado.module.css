@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
+   
     
 }
 
@@ -215,7 +215,7 @@
   position: absolute;
   top: 50px;
   left: 45%;
-
+  
   transition: 1s;
   font-size: 3rem;
   text-align: center;
@@ -264,6 +264,476 @@
 
 }
 
+
+
+/* modal clientes */
+
+.boxModalClientes {
+
+
+  position: absolute;
+  background-color: #d6a00b;
+  padding: 40px 20px;
+  border-radius:10px;
+  max-width: 1200px;
+  height: 600px;
+  overflow-Y: scroll;
+  
+
+}
+
+.boxModalClientes .boxNaoEncontrado{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   background-color: red;
+   padding: 10px;
+    width: 80%;
+    margin: 0px auto;
+   color: white;
+   text-transform: uppercase;
+}
+
+
+
+
+.animaAlertOn{
+  
+  opacity: 1;
+  filter: blur(0);
+  transition: 1s;
+}
+
+.animaAlertOff{
+
+ 
+  visibility: hidden;
+  filter: blur(5px);
+  transition: none;
+
+}
+  
+
+  
+
+  
+
+  
+
+
+
+
+.boxModalClientes .boxInput {
+
+  text-align: center;
+  max-width: 800px;
+  margin: 0px  auto;
+  padding: 20px 10px 40px  10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  
+}
+
+
+.boxModalClientes .boxInput h1 {
+
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #0B2438;
+
+}
+
+.boxModalClientes .boxInput input {
+
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid #0B2438; 
+}
+   
+
+.boxModalClientes .boxPaiModalClientes{
+
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-evenly;
+ gap: 30px 10px;
+ flex-wrap: wrap;
+ 
+}
+
+.boxModalClientes  .boxClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+ 
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+ 
+.boxModalClientes  .boxClose .iconX{
+
+    color: red;
+
+}
+ 
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura{
+
+ 
+    min-height: 250px;
+    border-left: 5px solid #0B2438;
+    background-color: white;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(3 , 1fr);
+    grid-gap: 10px;
+    transition: 400ms;
+    position: relative;
+    overflow: hidden;
+    flex-basis: 350px;
+    
+
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura{
+
+ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50% , -50%); */
+    background-color: rgb(187, 59, 59);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    color: white;
+    width: 50%;
+    
+
+    animation-name: move;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite
+
+}
+
+.alertMoldOn{
+
+    transform: translate(-50% , -50%);
+    transition: 800ms;
+}
+
+.alertMoldOff{
+
+  transform: translate(-250% , -50%);
+  transition:800ms;
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura .boxMolduraBtb{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura .boxMolduraBtb button{
+
+  width: 100%;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+ 
+  
+}
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .alertMoldura p{
+
+    text-wrap:wrap;
+    text-align: center;
+    min-height: 50px;
+    font-size: 0.9rem;
+
+  }
+  
+
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .btnDel{
+
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px;
+  background-color: rgba(255, 51, 0, 0.795);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  transition: 800ms;
+  opacity: 1;
+  transform: translateY(100px);
+}
+
+.btnDelOff{
+
+ opacity: 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px;
+}
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura .btnDel:hover{
+
+
+  background-color: rgb(255, 0, 0);
+  transition: 800ms;
+  
+}
+
+    
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura div{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-start;
+
+}
+
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura:hover{
+
+   transform: translateY(-8px);
+   transition: 400ms;
+   border-left: 5px solid green;
+
+}
+
+.boxModalClientes .boxPaiModalClientes .boxMoldura:hover .btnDel{
+
+  transform: translateY(0);
+  transition: 800ms;
+
+}
+
+    
+
+
+.modalAnimaOn{
+
+  transform: scale(1);
+  opacity: 1;
+ transition:600ms;
+  
+}
+
+
+.modalAnimaOff{
+
+  
+  transform: scale(0);
+  transition: 600ms;
+  opacity: 0;
+}
+ 
+
+
+/* cadastrar clientes */
+
+.boxPai .boxCadastrarClientes{
+
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+   justify-content: center;
+    position: absolute;
+    width: 100%;
+  }
+    
+
+
+  .boxPai .boxCadastrarClientes .boxFormulario{
+
+      width: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background-color: #FED45C;
+      padding: 20px 10px;
+      border-radius: 8px;
+      position: relative;
+      
+  }
+
+  
+  .boxPai .boxCadastrarClientes .boxFormulario .iconFechar{
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 10px;
+    right: 10px;
+    background-color: #0B2438;
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+    
+}
+      
+
+
+  .boxPai .boxCadastrarClientes .boxFormulario form{
+
+    min-width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content:space-evenly;
+    padding: 0px 20px;
+    
+  }
+
+  .boxPai .boxCadastrarClientes .boxFormulario form .boxMsg{
+
+      width: 100%;
+      text-align: center;
+
+      & p{
+
+        text-transform: uppercase;
+      }
+    
+  }
+    
+    
+    
+
+  .boxPai .boxCadastrarClientes .boxFormulario h1{
+
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: #0B2438;
+      width: 100%;
+      text-align: center;
+    
+  }
+
+
+
+.boxPai .boxCadastrarClientes .boxFormulario form div{
+
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  width: 100%;
+  
+
+}
+
+.boxPai .boxCadastrarClientes .boxFormulario form div input{
+
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border: 2px solid #0B2438; 
+
+}
+
+
+.boxPai .boxCadastrarClientes .boxFormulario form .boxBotaoCadastro {
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  
+}
+
+.boxPai .boxCadastrarClientes .boxFormulario form .boxBotaoCadastro button:nth-last-of-type(1){
+
+  width: 200px;
+  padding: 15px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #a52f2f;
+  color: white;
+  position: relative;
+  
+  box-shadow: 0px 6px 5px rgb(2, 2, 2);
+ 
+}
+
+.boxPai .boxCadastrarClientes .boxFormulario form .boxBotaoCadastro button:nth-last-of-type(2){
+
+  width: 200px;
+  padding: 15px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #0B2438;
+  color: white;
+  position: relative;
+  
+  box-shadow: 0px 6px 5px rgb(2, 2, 2);
+ 
+}
+
+
+.boxPai .boxCadastrarClientes .boxFormulario form div button:active{
+
+      transform: translateY(2px);
+      box-shadow: 0px 2px 5px black;
+      transition: 250ms;
+}
+
+
+.inputAnimaOn{
+
+  background-color: red;
+  transition: 800ms;
+}
+
+.inputAnimaOff{
+
+  background-color: white;
+  transition: 800ms;
+}
 
 
 @media screen and (max-width:460px) {
@@ -328,6 +798,21 @@
      
       left: 5px;
    
+    }
+
+}
+
+
+@keyframes move {
+
+    
+
+    to{
+
+        box-shadow: 0px 0px 10px red , 0px 0px 25px red;
+
+        transition: 1s;
+
     }
 
 }
