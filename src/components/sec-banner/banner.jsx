@@ -299,7 +299,7 @@ export default function Banner() {
 
                 <div className={estiloBanner.boxFilhoTexto}>
 
-                    <h1>Lopix bravo barbershop</h1>
+                    <h1>Lopfy bravo barbershop</h1>
                     <h3>corte de cabelo e barba & serviços especiais</h3>
                     <p>Bem vindo ao Blade's barbershop , o seu destino definitivo para um estilo impecável e cuidados excepcionais.Aqui combinamos a tradição da barbearia com um toque moderno para oferecer uma experiência de gooming inigualável.Oferecemos Corte de cabelo, Barba & Serviços Especiais</p>
 
